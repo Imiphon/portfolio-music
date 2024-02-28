@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [
+    MatIconModule,
+    MatSidenavModule,
+    MatMenuModule,
+  ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
 

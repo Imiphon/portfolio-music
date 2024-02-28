@@ -1,0 +1,43 @@
+@import './../../styles.scss';
+
+
+
+.headline-frame {
+    @include dFlex()    
+}
+
+.headline {
+    width: 100%;
+    margin-bottom: 1vw; 
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 8.89vw; // font-size:128px for .main-frame.width: 1440px in vw
+    line-height: 8.89vw;
+    letter-spacing: -2.5%;
+    text-align: center;
+}
+
+.line-name-frame {
+    width:100%;
+    @include dFlex($fd:row,$jc:flex-end);  
+}
+
+.line {
+    width: 100%; /* Breite der Linie */
+    height: 2px; /* Höhe der Linie anpassen, um mit "F" von "Frontend" zu beginnen */
+    background-color: black; /* Farbe der Linie */
+    margin-right: 10px; /* Abstand zwischen Linie und Name */
+}
+
+.name {
+    font-family: 'Overpass', sans-serif;
+    width: auto;
+    margin-bottom: 0px; 
+    font-weight: 700;
+    font-size: 3.33vw; // font-size:48px for .main-frame.width: 1440px in vw
+    line-height: 3.33vw;
+    letter-spacing: -2.5%;
+    text-align: center;
+    color: #FF9900;
+    white-space: nowrap; 
+}

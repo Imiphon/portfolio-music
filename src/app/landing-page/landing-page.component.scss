@@ -1,0 +1,13 @@
+@import './../../styles.scss';
+
+.main-frame {
+    width: 1440px;
+    height: 100vh;
+    background-color: #FFFCF3;
+    box-sizing: border-box;
+    @include dFlex($jc:start-flex);
+    @media (max-width: 1440px) {
+        width: 100vw;
+        padding: 0 20px; 
+    }
+}
