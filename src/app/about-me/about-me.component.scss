@@ -1,0 +1,70 @@
+@import './../../styles.scss';
+
+.about-me-frame {
+    height: 400px;
+    @include dFlex($fd: row, $jc: flex-start);
+
+    @media (max-width:375px) {
+        flex-direction:column-reverse;
+        margin: 10px;
+        img {
+            width: 100px !important;
+        }
+    }
+}
+
+.text-frame {
+    width: 50%; //width:619 of < 1440px
+    height: 354px;
+    @include dFlex($jc: flex-start);
+    overflow: auto;
+    padding: 10px;
+
+    gap: 52px;
+    @media (max-width:1440px) {
+        height: 354px;
+        gap: 3.6%;
+    }
+}
+
+.sub-title {
+    @include subTitle();
+    //height: 354px;
+    margin-bottom: 2px;
+
+    @media (max-width:1440px) {
+        font-size: 5.42vw;
+        line-height: 5.42vw;
+    }
+}
+
+.text {
+    width: 100%; //610pxof <1440px
+    height: 224px;
+    font-size: 23px;
+    line-height: 27.6px;
+
+    @media (max-width:1440px) {
+        font-size: 1.6vw;
+        line-height: 1.92vw;
+    }
+
+    @media (max-width:650px) {
+        font-size: 10.4px;
+        line-height: 12.5px;
+    }
+}
+
+.portrait {
+    position: relative !important;
+    top: 2px;
+    @include dFlex();
+    width: 50%;
+    height: auto;
+img {
+    
+    width: 30vw;
+    height: auto;
+    border-radius: 5px;
+}
+}
