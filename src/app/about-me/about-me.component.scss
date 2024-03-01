@@ -1,29 +1,87 @@
 @import './../../styles.scss';
 
 .about-me-frame {
-    height: 400px;
-    @include dFlex($fd: row, $jc: flex-start);
+    max-width: 100%!important;
+    @include dFlex($jc: flex-start, $ai: flex-start);
 
     @media (max-width:375px) {
-        flex-direction:column-reverse;
+        flex-direction: column;
         margin: 10px;
+
         img {
-            width: 100px !important;
+            width: 100% !important;
         }
     }
 }
 
+.text-pic-frame {
+    @include dFlex($jc: flex-start, $fd: row);
+
+    @media (max-width:375px) {
+        flex-direction: column-reverse !important;
+        align-items: center !important;
+        gap: 12px;
+    }
+}
+
+.left-frame {
+    width: 50%;
+    @include dFlex();
+}
+
+a {
+    // height: 68px !important;
+    border: 4px solid black !important;
+    padding: 12px 1em 12px 1em !important;
+    text-decoration: none;
+    color: black;
+}
+
+#a1 {
+    //for screen under the text
+    margin-top: 10%;
+    @media (max-width:375px) {
+        display: none;
+    }
+}
+
+.a2-frame {
+    position: relative;
+    
+    margin: 12px 0 12px 0;
+    @include dFlex();
+    @media (max-width:375px) {
+        width: 100vw;
+    }
+}
+
+#a2 {
+    //for mobile in top of the subtitle
+    width: 7em;
+    white-space: nowrap;
+    height: auto;
+    margin-bottom: 10%;
+    @media (min-width:375px) {
+        display: none;
+    }
+}
+
 .text-frame {
-    width: 50%; //width:619 of < 1440px
-    height: 354px;
-    @include dFlex($jc: flex-start);
+    width: 100%; //width:619 of < 1440px
+    height: 224px;
+    @include dFlex($jc: flex-start, $ai: flex-start);
     overflow: auto;
     padding: 10px;
 
     gap: 52px;
+
     @media (max-width:1440px) {
         height: 354px;
         gap: 3.6%;
+    }
+
+    @media (max-width:375px) {
+        width: 100%;
     }
 }
 
@@ -31,6 +89,8 @@
     @include subTitle();
     //height: 354px;
     margin-bottom: 2px;
+    padding: 10px;
+    text-align: left;
 
     @media (max-width:1440px) {
         font-size: 5.42vw;
@@ -38,9 +98,13 @@
     }
 }
 
+.text-pic-frame {
+    @include dFlex($ai: flex-start, $fd: row);
+}
+
 .text {
     width: 100%; //610pxof <1440px
-    height: 224px;
+    height: 55%;
     font-size: 23px;
     line-height: 27.6px;
 
@@ -61,10 +125,15 @@
     @include dFlex();
     width: 50%;
     height: auto;
-img {
-    
-    width: 30vw;
-    height: auto;
-    border-radius: 5px;
-}
+
+    @media (max-width:375px) {
+        width: 80%;
+    }
+
+    img {
+
+        width: 30vw;
+        height: auto;
+        border-radius: 5px;
+    }
 }

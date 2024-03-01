@@ -71,8 +71,8 @@ $defBoxS: -5px 5px 10px rgba(0, 0, 0, 0.5);
     background-color: $bgrC;
 }
 
-@mixin dFlex($jc: center, $ai: center, $fd: column) {
-    display: flex;
+@mixin dFlex($jc: center, $ai: center, $fd: column, $dp: flex) {
+    display: $dp;
     justify-content: $jc;
     align-items: $ai;
     flex-direction: $fd;
