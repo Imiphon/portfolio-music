@@ -1,6 +1,7 @@
 @import './../../styles.scss';
 
 .about-me-frame {
+    margin: 0 3vw;
     max-width: 100%!important;
     @include dFlex($jc: flex-start, $ai: flex-start);
 
@@ -15,18 +16,24 @@
 }
 
 .text-pic-frame {
-    @include dFlex($jc: flex-start, $fd: row);
-
+    @include dFlex($jc: flex-start, $ai:flex-start, $fd: row);
+    //padding-left: 24px;
+    gap: 32px;
     @media (max-width:375px) {
         flex-direction: column-reverse !important;
         align-items: center !important;
         gap: 12px;
+        padding-left: 0;
     }
 }
 
 .left-frame {
     width: 50%;
     @include dFlex();
+    @media (max-width:375px) {
+        width: 100%;
+        padding: 12px;
+    }
 }
 
 a {
@@ -68,20 +75,19 @@ a {
 
 .text-frame {
     width: 100%; //width:619 of < 1440px
-    height: 224px;
     @include dFlex($jc: flex-start, $ai: flex-start);
     overflow: auto;
     padding: 10px;
-
+    height: 224px;
     gap: 52px;
 
-    @media (max-width:1440px) {
-        height: 354px;
+    @media (max-width:1440px) {        
+        height: 170px;
         gap: 3.6%;
     }
 
     @media (max-width:375px) {
-        width: 100%;
+        width: 80%;
     }
 }
 
@@ -92,14 +98,6 @@ a {
     padding: 10px;
     text-align: left;
 
-    @media (max-width:1440px) {
-        font-size: 5.42vw;
-        line-height: 5.42vw;
-    }
-}
-
-.text-pic-frame {
-    @include dFlex($ai: flex-start, $fd: row);
 }
 
 .text {
@@ -117,6 +115,15 @@ a {
         font-size: 10.4px;
         line-height: 12.5px;
     }
+}
+.right-frame{
+    @include dFlex();
+  
+}
+.right-arrow{
+    position: relative;
+    top: 32px;
+    width: 60px;
 }
 
 .portrait {

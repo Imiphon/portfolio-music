@@ -2,7 +2,7 @@ import { Component, importProvidersFrom } from '@angular/core';
 import { HeaderComponent } from "./../header/header.component";
 import { CodingHomeComponent } from "./../coding-home/coding-home.component";
 import { AboutMeComponent } from "./../about-me/about-me.component";
-import { MyScillsComponent } from "./../my-scills/my-scills.component";
+import { MySkillsComponent } from "./../my-skills/my-skills.component";
 import { PortfolioComponent } from "./../portfolio/portfolio.component";
 import { ContactComponent } from "./../contact/contact.component";
 import { FooterComponent } from "./../footer/footer.component";
@@ -15,7 +15,7 @@ import { FooterComponent } from "./../footer/footer.component";
     CodingHomeComponent,
     FooterComponent,
     AboutMeComponent,
-    MyScillsComponent,
+    MySkillsComponent,
     PortfolioComponent,
     ContactComponent
   ],

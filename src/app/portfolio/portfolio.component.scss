@@ -1,0 +1,80 @@
+@import './../../styles.scss';
+
+.portfolio-frame {
+    margin: 0 3vw;
+    max-width: 100%!important;
+    @include dFlex();
+
+    @media (max-width:375px) {
+        flex-direction: column;
+        margin: 10px;
+
+        img {
+            width: 100% !important;
+        }        
+    }
+}
+
+.sub-title {
+    @include subTitle();
+    margin-bottom: 2px;
+    padding: 10px;
+}
+.subtext-frame{
+    @include dFlex();
+    margin-top: 23px;
+    margin-bottom: 32px;   
+    width: 525px;
+    height: 56px;
+    padding-left: 42px;
+}
+
+.subtitle-text {
+
+}
+
+.examples-frame{
+    display: grid;
+    //gap: 20px;
+}
+
+.text {
+    width: 100%; //610px of <1440px
+    height: 55%;
+    font-size: 23px;
+    line-height: 27.6px;
+
+    @media (max-width:1440px) {
+        font-size: 1.6vw;
+        line-height: 1.92vw;
+    }
+
+    @media (max-width:650px) {
+        font-size: 10.4px;
+        line-height: 12.5px;
+    }
+}
+
+
+
+.img-text-frame {
+    margin-top: 82px;
+    display: grid;
+    width: fit-content;
+    margin-top: 82px;
+    grid-template-columns: 1fr 1fr;
+    img {
+        width: 100%;
+    }
+    .count {
+        width: 50%;
+    }
+    :nth-child(1){justify-self: start;}
+    :nth-child(2){justify-self: end;}
+}
+
+.right-arrow{
+    position: relative;
+    top: 32px;
+    width: 60px;
+}
