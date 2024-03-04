@@ -49,6 +49,15 @@ span {
     flex-direction: $fd;
 }
 
+.arrow-down,
+.arrow-left-down,
+.arrow-right-down {
+    width: 12vw;// 116px;
+    @media (max-width:375px) {
+        width: 42vw; // 168px;
+    }
+}
+
   
   @mixin hoverEff ($color: rgb(0, 179, 255)) {
     color: $color;

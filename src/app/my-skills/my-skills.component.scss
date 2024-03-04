@@ -53,9 +53,12 @@
 }
 
 
-.arrow-right {
-    img {
-        position: relative;
-        left: 20px;
+.arrow-right-down {
+    position: relative;
+    top: 32px;
+    left: -28vw; //from justify-content: center
+    margin-bottom: 32px;
+    @media (max-width:375px) {
+        left: 0; 
     }
 }

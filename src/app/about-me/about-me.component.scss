@@ -2,23 +2,21 @@
 
 .about-me-frame {
     margin: 0 3vw;
-    max-width: 100%!important;
+    max-width: 100% !important;
     @include dFlex($jc: flex-start, $ai: flex-start);
 
     @media (max-width:375px) {
         flex-direction: column;
         margin: 10px;
 
-        img {
-            width: 100% !important;
-        }
     }
 }
 
 .text-pic-frame {
-    @include dFlex($jc: flex-start, $ai:flex-start, $fd: row);
+    @include dFlex($jc: flex-start, $ai: flex-start, $fd: row);
     //padding-left: 24px;
     gap: 32px;
+
     @media (max-width:375px) {
         flex-direction: column-reverse !important;
         align-items: center !important;
@@ -30,6 +28,7 @@
 .left-frame {
     width: 50%;
     @include dFlex();
+
     @media (max-width:375px) {
         width: 100%;
         padding: 12px;
@@ -47,6 +46,7 @@ a {
 #a1 {
     //for screen under the text
     margin-top: 10%;
+
     @media (max-width:375px) {
         display: none;
     }
@@ -54,9 +54,10 @@ a {
 
 .a2-frame {
     position: relative;
-    
+
     margin: 12px 0 12px 0;
     @include dFlex();
+
     @media (max-width:375px) {
         width: 100vw;
     }
@@ -68,6 +69,7 @@ a {
     white-space: nowrap;
     height: auto;
     margin-bottom: 10%;
+
     @media (min-width:375px) {
         display: none;
     }
@@ -81,7 +83,7 @@ a {
     height: 224px;
     gap: 52px;
 
-    @media (max-width:1440px) {        
+    @media (max-width:1440px) {
         height: 170px;
         gap: 3.6%;
     }
@@ -116,14 +118,14 @@ a {
         line-height: 12.5px;
     }
 }
-.right-frame{
+
+.right-frame {
     @include dFlex();
-  
 }
-.right-arrow{
+
+.arrow-left-down {
     position: relative;
     top: 32px;
-    width: 60px;
 }
 
 .portrait {
@@ -138,9 +140,11 @@ a {
     }
 
     img {
-
         width: 30vw;
         height: auto;
         border-radius: 5px;
+        @media (max-width:390px) {
+            width: 100%;
+        } 
     }
 }

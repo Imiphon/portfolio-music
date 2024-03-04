@@ -2,7 +2,7 @@
 
 .portfolio-frame {
     margin: 0 3vw;
-    max-width: 100%!important;
+    max-width: 100% !important;
     @include dFlex();
 
     @media (max-width:375px) {
@@ -11,7 +11,7 @@
 
         img {
             width: 100% !important;
-        }        
+        }
     }
 }
 
@@ -20,20 +20,17 @@
     margin-bottom: 2px;
     padding: 10px;
 }
-.subtext-frame{
+
+.subtext-frame {
     @include dFlex();
     margin-top: 23px;
-    margin-bottom: 32px;   
+    margin-bottom: 32px;
     width: 525px;
     height: 56px;
     padding-left: 42px;
 }
 
-.subtitle-text {
-
-}
-
-.examples-frame{
+.examples-frame {
     display: grid;
     //gap: 20px;
 }
@@ -55,25 +52,35 @@
     }
 }
 
-
-
 .img-text-frame {
-    margin-top: 82px;
-    display: grid;
+    margin-top: 5.6vw;
     width: fit-content;
-    margin-top: 82px;
-    grid-template-columns: 1fr 1fr;
+    @include dFlex($fd: row);
+
+    @media (max-width:740px) {        
+      flex-direction: column;
+    }
+
     img {
         width: 100%;
     }
+
     .count {
-        width: 50%;
+        position: relative;
+        width: 100%;
+        height: 100%;
     }
-    :nth-child(1){justify-self: start;}
-    :nth-child(2){justify-self: end;}
+
+    .right {
+        text-align: right;
+    }
+
+    .left {
+        text-align: left;
+    }
 }
 
-.right-arrow{
+.right-arrow {
     position: relative;
     top: 32px;
     width: 60px;

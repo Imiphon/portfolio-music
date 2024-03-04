@@ -32,7 +32,7 @@
     //margin: 20px;
     @include dFlex($fd:row,$jc:flex-end); 
     @media (max-width:1440px) {
-        width: 94%;
+        width: 72%;
         margin-bottom: 2vw;
     } 
 }
@@ -57,4 +57,13 @@
     text-align: center;
     color: #FF9900;
     white-space: nowrap; 
+}
+.img-text-frame {
+    @include dFlex(); 
+}
+
+.arrow-down-frame {
+    width: 100vw;
+    padding-right: 5.6vw;
+    @include dFlex($ai:flex-end); 
 }
