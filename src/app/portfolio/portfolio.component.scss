@@ -18,25 +18,23 @@
 .sub-title {
     @include subTitle();
     margin-bottom: 2px;
-    padding: 10px;
+    //padding: 10px;
 }
 
 .subtext-frame {
     @include dFlex();
     margin-top: 23px;
     margin-bottom: 32px;
-    width: 525px;
+    width: min-content; //525px;
     height: 56px;
-    padding-left: 42px;
 }
 
 .examples-frame {
-    display: grid;
     //gap: 20px;
 }
 
 .text {
-    width: 100%; //610px of <1440px
+    width: 99%; //610px of <1440px
     height: 55%;
     font-size: 23px;
     line-height: 27.6px;

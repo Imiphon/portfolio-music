@@ -76,9 +76,9 @@ a {
 }
 
 .text-frame {
-    width: 100%; //width:619 of < 1440px
+    //width: 100%; //width:619 of < 1440px
     @include dFlex($jc: flex-start, $ai: flex-start);
-    overflow: auto;
+    overflow-y: auto;
     padding: 10px;
     height: 224px;
     gap: 52px;
@@ -120,6 +120,7 @@ a {
 }
 
 .right-frame {
+    width: 50%;
     @include dFlex();
 }
 
@@ -136,15 +137,16 @@ a {
     height: auto;
 
     @media (max-width:375px) {
-        width: 80%;
+        width: 100%;
+        
     }
 
     img {
         width: 30vw;
         height: auto;
         border-radius: 5px;
-        @media (max-width:390px) {
-            width: 100%;
+        @media (max-width:375px) {
+            width: 80vw;
         } 
     }
 }
