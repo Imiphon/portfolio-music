@@ -2,32 +2,53 @@
 
 .contact-frame {
     width: 100%;
-    height: 1002px;
+    height: auto; //1002px;
 }
 
 .triangle {
     width: 100vw;
+    max-width: 1440px;
     height: 16vw; //230px;    
     background-image: linear-gradient(to bottom left, transparent 50%, black 50%);
 }
 
 .subtitle {
-    width: 100%;
     position: relative;
     top: 0;
-    left: 2vw;
+    left: -30vw;
+    margin-bottom: 32px;
     color: white;
     @include subTitle();
-    text-align: left;
     padding-left: 2.5vw;
     @media (max-width:375px) {
         left: -16vw;
     }
 }
 
+.quest{
+    font-size: 2.2vw; //32px;
+    @media (max-width:390px) {
+        font-size: 16px; 
+    }
+}
+
+.hello {
+    font-size: 1.6vw;
+    margin-bottom: 32px;
+    @media (max-width:390px) {
+        font-size: 14px;
+    }
+}
+
 .form-frame {
-    height: 852px;
+    width: 101%;
+    //height: 852px;
     background-color: black;
+    position: relative;
+    top: -1px;
+    @include dFlex($jc:flex-start);
+
+    padding-bottom: 32px;
 }
 
 p {
@@ -35,13 +56,22 @@ p {
     color: white;
 }
 .contact-form {
-    width: 100%;
+    width: 40vw;
     @include dFlex();
-
+    button {
+        background-color: black;
+        border: 1px solid rgb(55 55 55);
+        color: rgb(55 55 55);
+        &:hover {
+            color: white;
+            cursor: pointer;
+        }
+    }
 }
 
+textarea,
 input {
-    width: 30vw;
+    width: 100%;
     font-weight: 800;
     line-height: 3vw;
     color: white;
@@ -52,4 +82,35 @@ input {
 
 .message {
     height:300px;
+}
+
+.checkbox-frame {
+    display: flex;
+    width: 100%;
+    font-size: 0.7vw;
+    //text-align: center;    
+    line-height: 1.5vw;
+    flex-direction: row !important;
+    #checkbox {
+        width: min-content;
+    }
+    p {
+        width: fit-content;
+        margin: 2px 0 0 12px;
+    }
+    a {
+        text-decoration: none;
+        color: #FF9900;
+    }
+    @media (max-width: 390px) {
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+.arrow-up{
+
+    position: absolute;
+    bottom: 80px;
+    right: 32px;
 }

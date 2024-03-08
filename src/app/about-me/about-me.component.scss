@@ -3,7 +3,7 @@
 .about-me-frame {
     margin: 0 3vw;
     max-width: 100% !important;
-    @include dFlex($jc: flex-start, $ai: flex-start);
+    @include dFlex($jc: flex-start, $ai: center);
 
     @media (max-width:375px) {
         flex-direction: column;

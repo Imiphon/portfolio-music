@@ -1,0 +1,19 @@
+@import './../../styles.scss';
+
+.footer-frame{
+    background-color: black;
+    width: 100vw;
+    @include dFlex($jc:start);
+    padding: 8px;
+}
+
+.logo {
+    width:fit-content;
+}
+
+.brand-link-frame{
+    color: white;
+    @include dFlex($fd:row, $jc:space-between);
+    width: 100%;
+    margin: 0 32px;
+}
