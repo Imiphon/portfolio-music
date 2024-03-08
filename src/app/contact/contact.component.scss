@@ -12,6 +12,7 @@
 }
 
 .subtitle {
+    width: 100%;
     position: relative;
     top: 0;
     left: 2vw;
@@ -25,7 +26,7 @@
 }
 
 .form-frame {
-    height: 465px;
+    height: 852px;
     background-color: black;
 }
 
@@ -33,6 +34,22 @@ p {
     text-align: center;
     color: white;
 }
-.orange {
-    color: #FF9900;
+.contact-form {
+    width: 100%;
+    @include dFlex();
+
+}
+
+input {
+    width: 30vw;
+    font-weight: 800;
+    line-height: 3vw;
+    color: white;
+    background-color: black;
+    border: none;
+    border-bottom: 2px solid white;
+}
+
+.message {
+    height:300px;
 }
