@@ -72,3 +72,25 @@
         left: 0; 
     }
 }
+
+.popup {
+    position: fixed;
+    transform: translate(-50%, -50%); 
+    color: black;
+    background-color: rgb(229, 229, 229);
+    padding: 20px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    opacity: 0;
+    animation: riseUp 5s ease-out forwards;
+}
+
+@keyframes riseUp {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(-500px); 
+        opacity: 0;
+    }
+}

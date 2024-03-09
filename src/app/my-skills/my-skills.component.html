@@ -4,18 +4,19 @@
     </div>
     <div class="skills-frame">
         <div class="img-frame">
-            <img src="assets/icons/angular.png" alt="">
-            <img src="assets/icons/typescript.png" alt="">
-            <img src="assets/icons/javascript.png" alt="">
-            <img src="assets/icons/html.png" alt="">
-            <img src="assets/icons/css.png" alt="">
-            <img src="assets/icons/firebase.png" alt="">
-            <img src="assets/icons/git.png" alt="">
-            <img src="assets/icons/scrum.png" alt="">
-            <img src="assets/icons/api.png" alt="">
-            <img src="assets/icons/materialDesign.png" alt="">
-            <img src="assets/icons/logic-black.png" alt="">
-            <img src="assets/icons/protools-black.png" alt="">
+            <img (click)="openPopup('angular', $event )" src="assets/icons/angular.png" alt="">  
+            <img (click)="openPopup('typescript', $event )" src="assets/icons/typescript.png" alt="">    
+            <img (click)="openPopup('javascript', $event )" src="assets/icons/javascript.png" alt="">    
+            <img (click)="openPopup('html5', $event )" src="assets/icons/html.png" alt="">   
+            <img (click)="openPopup('css', $event )" src="assets/icons/css.png" alt="">  
+            <img (click)="openPopup('firebase', $event )" src="assets/icons/firebase.png" alt="">    
+            <img (click)="openPopup('git', $event )" src="assets/icons/git.png" alt="">  
+            <img (click)="openPopup('scrum', $event )" src="assets/icons/scrum.png" alt="">  
+            <img (click)="openPopup('api', $event )" src="assets/icons/api.png" alt="">  
+            <img (click)="openPopup('materialDesign', $event )" src="assets/icons/materialDesign.png" alt="">    
+            <img (click)="openPopup('logic' , $event )" src="assets/icons/logic-black.png" alt="">    
+            <img (click)="openPopup('protools', $event )" src="assets/icons/protools-black.png" alt="">  
+            <div *ngIf="showPopup" class="popup" [style.left]="popupPositionX" [style.top]="popupPositionY">{{popupContent}}</div>
         </div>
     </div>
     <div>
