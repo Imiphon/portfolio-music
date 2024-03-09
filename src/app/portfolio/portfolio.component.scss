@@ -3,6 +3,7 @@
 .portfolio-frame {
     max-width: 100%;
     width: 88vw;
+    height: auto;
     @include dFlex();
     margin-bottom: 32px;
 
@@ -19,21 +20,23 @@
 .subtext-frame {
     @include dFlex();
     margin-top: 23px;
-    margin-bottom: 32px;
+    margin-bottom: 80px;
     width: min-content; //525px;
     height: 56px;
 }
 
 .examples-frame {
+    max-width: 1440px;
     width: 100%;
+    margin: 0 32px;
     @include dFlex();
 }
 
 .img-text-frame {
     //margin-top: 5.6vw;
-    width: 100%;
-
-    @include dFlex($fd: row);
+    width: 90%;
+    margin-bottom: 64px;
+    @include dFlex($fd: row, $jc:space-between);
 
     a {
         width: 50%;
@@ -45,9 +48,8 @@
     }
 
     .count {
-        width: 50%;
         max-height: 32vw; //460px;
-        @include dFlex($jc: flex-start);
+        @include dFlex($jc: flex-start,$ai:start);
         font-size: 48px;
 
     }
@@ -59,19 +61,12 @@
         a {
             width: 100%;
         }
-    //    .right {
-    //        align-items: center;
-    //        flex-direction: column-reverse !important;
-    //    }
-    //    .left {
-    //        align-items: center;
-    //        flex-direction: column;
-    //    }
     }
 }
 
 .right {
-    align-items: end;
+    align-items: start;
+
     @media (max-width:740px) {
         align-items: center;
         flex-direction: column-reverse !important;
@@ -89,7 +84,7 @@
 
 .text {
     width: 99%; //610px of <1440px
-    height: 55%;
+    height:  auto;
     font-size: 23px;
     line-height: 27.6px;
 

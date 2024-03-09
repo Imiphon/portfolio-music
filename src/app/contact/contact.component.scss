@@ -2,6 +2,7 @@
 
 .contact-frame {
     width: 100%;
+    max-width: 1440px;
     height: auto; //1002px;
 }
 
@@ -13,40 +14,43 @@
 }
 
 .subtitle {
-    position: relative;
-    top: 0;
-    left: -30vw;
+    width: 100%;
+    max-width: 1440px;
+    //margin-left: 14vw;    
     margin-bottom: 32px;
     color: white;
-    @include subTitle();
-    padding-left: 2.5vw;
-    @media (max-width:375px) {
-        left: -16vw;
+    @include subTitle($ta: left);
+
+    div {
+        width: fit-content;
+        margin-left: 8vw;
     }
 }
 
-.quest{
+.quest {
     font-size: 2.2vw; //32px;
+
     @media (max-width:390px) {
-        font-size: 16px; 
+        font-size: 16px;
     }
 }
 
 .hello {
     font-size: 1.6vw;
     margin-bottom: 32px;
+
     @media (max-width:390px) {
         font-size: 14px;
     }
 }
 
 .form-frame {
-    width: 101%;
+    width: 100%;
     //height: 852px;
     background-color: black;
-    position: relative;
-    top: -1px;
-    @include dFlex($jc:flex-start);
+    //position: relative;
+    //top: -1px;
+    @include dFlex($jc: flex-start);
 
     padding-bottom: 32px;
 }
@@ -55,13 +59,16 @@ p {
     text-align: center;
     color: white;
 }
+
 .contact-form {
     width: 40vw;
     @include dFlex();
+
     button {
         background-color: black;
         border: 1px solid rgb(55 55 55);
         color: rgb(55 55 55);
+
         &:hover {
             color: white;
             cursor: pointer;
@@ -81,7 +88,7 @@ input {
 }
 
 .message {
-    height:300px;
+    height: 300px;
 }
 
 .checkbox-frame {
@@ -91,26 +98,29 @@ input {
     //text-align: center;    
     line-height: 1.5vw;
     flex-direction: row !important;
+
     #checkbox {
         width: min-content;
     }
+
     p {
         width: fit-content;
         margin: 2px 0 0 12px;
     }
+
     a {
         text-decoration: none;
         color: #FF9900;
     }
+
     @media (max-width: 390px) {
         font-size: 14px;
         line-height: 16px;
     }
 }
 
-.arrow-up{
-
-    position: absolute;
-    bottom: 80px;
-    right: 32px;
+.arrow-up {
+    position: relative;
+    bottom: 15px;
+    right: -40%;
 }

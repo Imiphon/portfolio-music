@@ -3,17 +3,39 @@
 .footer-frame{
     background-color: black;
     width: 100vw;
-    @include dFlex($jc:start);
-    padding: 8px;
+    max-width: 1440px;
+    @include dFlex();   
 }
 
 .logo {
+    
     width:fit-content;
+    @include dFlex($ai:start);
+    width: 100%;
+    img {
+        margin-left: 12px;
+    }
 }
 
 .brand-link-frame{
     color: white;
     @include dFlex($fd:row, $jc:space-between);
-    width: 100%;
-    margin: 0 32px;
+    //width: -webkit-fill-available;    
+    max-width: 1440px;
+    width: 96%;
+}
+
+.link-frame {
+    @include dFlex($fd:row, $jc:space-between);
+    gap: 32px;
+    margin-bottom: 32px;
+
+    a {
+        text-decoration: none;
+        transition: transform 0.3s ease;
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    }
 }
