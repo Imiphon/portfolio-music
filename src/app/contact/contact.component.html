@@ -28,8 +28,10 @@
             <div>
                 <textarea class="message" cols="20" rows="3" name="message" id="message" placeholder="Your message"
                     ngModel [(ngModel)]="contactData.message" required #messageField="ngModel"></textarea>
-                <div *ngIf="messageField.invalid && messageField.touched" class="error-message"></div>
-
+                <div *ngIf="messageField.invalid && messageField.touched" class="error-message">
+                    Please enter a message.
+                </div>
+                    
             </div>
             <br>
             <div class="checkbox-frame">
@@ -44,10 +46,10 @@
                 </div>
             </div>
             <br>
-            <button type="button" (click)="prepareSubmit(contactForm)" [disabled]="contactForm.invalid" value="Send Message">Send Message</button>
+            <button type="submit" value="Send Message">Send Message</button>
         </form>
-
-        <img class="arrow-up" src="assets/icons/arrow-white-up.png" alt="">
+        <a class="arrow-up" href="#header"><img src="assets/icons/arrow-white-up.png" alt=""></a>
+        
     </div>
 
 </div>
