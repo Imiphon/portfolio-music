@@ -81,8 +81,10 @@ input {
     width: 100%;
     font-weight: 800;
     line-height: 3vw;
+    padding: 0 5px;
     color: white;
-    background-color: black;
+    background-color: black !important;
+    border-radius: 5px;
     border: none;
     border-bottom: 2px solid white;
 }
@@ -118,6 +120,11 @@ input {
         line-height: 16px;
     }
 }
+
+.error-message {
+    color: red; /* Oder eine andere Farbe, die zu deinem Design passt */
+    font-size: 0.8em;
+  }
 
 .arrow-up {
     position: relative;

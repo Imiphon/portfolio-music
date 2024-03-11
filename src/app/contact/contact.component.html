@@ -1,4 +1,3 @@
-
 <div class="contact-frame">
     <div class="triangle">
 
@@ -9,16 +8,45 @@
         </div>
         <p class="quest orange">Want to discuss a new project?</p>
         <p class="hello">Say hello! let's discuss your ideas and make it happen</p>
-        <form class="contact-form" action="submit">
-            <input type="text" name="" id="name" placeholder="Your name"><br>
-            <input type="email" name="" id="mail" placeholder="Your email"><br>
-            <textarea class="message" cols="40" rows="5" name="" id="text" placeholder="Your message"></textarea><br>
-            <label class="checkbox-frame">
-                <input type="checkbox" name="privacy" id="checkbox">
-                <p>I've read the <a href="URL_DEINER_DATENSCHUTZERKLÄRUNG" target="_blank">privacy policy</a> and agree to the processing of my data as outlined.</p>
-            </label><br>
-            <button type="submit" value="Send Message">Send Message</button>
+
+        <form #contactForm="ngForm" class="contact-form" (ngSubmit)="onSubmit(contactForm)">
+            <div>
+                <input placeholder="Your name" name="name" [(ngModel)]="contactData.name" required #nameField="ngModel">
+                <div *ngIf="nameField.invalid && nameField.touched" class="error-message">
+                    Name is required.
+                </div>
+            </div>
+            <br>
+            <div>
+                <input type="email" name="email" id="email" placeholder="Your eMail" ngModel #emailField="ngModel"
+                    [(ngModel)]="contactData.email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+                <div *ngIf="emailField.invalid && emailField.touched" class="error-message">
+                    Please enter a valid email.
+                </div>
+            </div>
+            <br>
+            <div>
+                <textarea class="message" cols="20" rows="3" name="message" id="message" placeholder="Your message"
+                    ngModel [(ngModel)]="contactData.message" required #messageField="ngModel"></textarea>
+                <div *ngIf="messageField.invalid && messageField.touched" class="error-message"></div>
+
+            </div>
+            <br>
+            <div class="checkbox-frame">
+                <input type="checkbox" name="privacy" id="checkbox" [(ngModel)]="contactData.privacy" required
+                    #privacyField="ngModel">
+                <p>
+                    I've read the <a href="URL_DEINER_DATENSCHUTZERKLÄRUNG" target="_blank">privacy policy</a> and agree
+                    to the processing of my data as outlined.
+                </p>
+                <div *ngIf="privacyField.invalid && privacyField.touched" class="error-message">
+                    You must agree to the privacy policy.
+                </div>
+            </div>
+            <br>
+            <button type="button" (click)="prepareSubmit(contactForm)" [disabled]="contactForm.invalid" value="Send Message">Send Message</button>
         </form>
+
         <img class="arrow-up" src="assets/icons/arrow-white-up.png" alt="">
     </div>
 
