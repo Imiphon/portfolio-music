@@ -10,26 +10,24 @@ import { CommonModule } from '@angular/common';
 })
 export class MySkillsComponent {
 
-  showPopup = false;
-  popupContent = '';
+  popups: Array<{
+    content: string;
+    positionX: string;
+    positionY: string;
+  }> = [];
 
-  popupPositionX:string = '0px';
-  popupPositionY:string = '0px';
-
-  openPopup(name: string, event:MouseEvent): void {
-    this.popupContent = name;
-    this.showPopup = true;
-    // Ermittle die Position des angeklickten Elements
+  openPopup(name: string, event: MouseEvent): void {
     const clickX = event.clientX;
     const clickY = event.clientY;
 
-    console.log(clickX, clickY);
-    
-    // Setze die Popup-Position
-    this.popupPositionX = clickX + 'px';
-    this.popupPositionY = clickY + 'px';
+    this.popups.push({
+      content: name,
+      positionX: clickX + 'px',
+      positionY: clickY + 'px',
+    });
+
     setTimeout(() => {
-      this.showPopup = false;
+      this.popups.shift();
     }, 3000);
   }
 }

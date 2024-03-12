@@ -16,7 +16,8 @@
             <img (click)="openPopup('materialDesign', $event )" src="assets/icons/materialDesign.png" alt="">    
             <img (click)="openPopup('logic' , $event )" src="assets/icons/logic-black.png" alt="">    
             <img (click)="openPopup('protools', $event )" src="assets/icons/protools-black.png" alt="">  
-            <div *ngIf="showPopup" class="popup" [style.left]="popupPositionX" [style.top]="popupPositionY">{{popupContent}}</div>
+            
+            <div *ngFor="let popup of popups" class="popup" [style.left]="popup.positionX" [style.top]="popup.positionY">{{popup.content}}</div>
         </div>
     </div>
     <div>

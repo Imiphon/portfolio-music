@@ -59,6 +59,10 @@
             width: 52px;
             height: 52px;
         }
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+        }
     }
 }
 
