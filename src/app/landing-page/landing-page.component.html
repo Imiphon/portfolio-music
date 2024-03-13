@@ -1,5 +1,6 @@
 
 <div class="main-frame">
+<div class="components-frame">
     <app-header (togglePrivacyPolicyEvent)="togglePrivacyPolicy()"></app-header>
     <app-coding-home></app-coding-home>
     <app-about-me></app-about-me>
@@ -8,5 +9,6 @@
     <app-contact></app-contact>
     <app-privacy-policy *ngIf="showPrivacyPolicy" (closeEvent)="togglePrivacyPolicy()"></app-privacy-policy>
     <app-footer></app-footer>
+</div>
     
 </div>

@@ -5,9 +5,7 @@
     left: 0;
     width: 100%;
     @include dFlex();
-    @media (max-width:370px) {
-        margin: 5px;
-    }
+   
 }
 
 .sub-title {

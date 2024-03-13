@@ -32,7 +32,7 @@
     //margin: 20px;
     @include dFlex($fd:row,$jc:flex-end); 
     @media (max-width:1440px) {
-        width: 72%;
+        width: 100%;
         margin-bottom: 2vw;
     } 
 }
@@ -58,12 +58,33 @@
     color: #FF9900;
     white-space: nowrap; 
 }
-.img-text-frame {
-    @include dFlex(); 
-}
 
 .arrow-down-frame {
     width: 100%;
-    padding-right: 5.6vw;
-    @include dFlex($ai:flex-end); 
+    @include dFlex($jc:space-between, $fd:row); 
 }
+
+.brand {
+    transform: rotate(-90deg);
+   transform-origin: center;
+    white-space: nowrap;
+    position: relative;
+    @media (max-width:1440px) {
+        left: -14vw;
+        font-size: 0.8rem;
+    }
+}
+
+.img-text-frame {
+    @include dFlex();
+    margin-right: 150px;
+    @media (max-width:1440px) {
+        margin-right: 0;
+    }
+    img {
+        @media (min-width:1440px) {
+            height: 12vw;
+        }       
+    }
+}
+
