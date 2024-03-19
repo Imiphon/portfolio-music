@@ -29,18 +29,20 @@
 
 .quest {
     font-size: 2.2vw; //32px;
-
-    @media (max-width:390px) {
+    @media (max-width:600px) {
         font-size: 16px;
     }
 }
 
 .hello {
     font-size: 1.6vw;
-    margin-bottom: 32px;
+    margin-bottom: 12px 0 32px 0;
 
-    @media (max-width:390px) {
+    @media (max-width:600px) {
         font-size: 14px;
+    }
+    @media (max-width:420px) {
+        margin: 0 32px 12px 32px;
     }
 }
 
@@ -74,11 +76,17 @@ p {
             cursor: pointer;
         }
     }
+    div {
+            width: 100%;       
+    }
+    @media (max-width:600px) {
+        width: 80%;
+    }
 }
 
 textarea,
 input {
-    width: 30vw;
+    width: 100%;
     font-weight: 800;
     line-height: 3vw;
     padding: 0 5px 8px 0;
@@ -86,10 +94,7 @@ input {
     background-color: black !important;
     border: none;
     border-bottom: 2px solid white;
-    @media (max-width: 600px) {
-        font-size: 10px;
-        width: 60vw;
-    }
+  
 }
 
 .message {
@@ -106,6 +111,9 @@ input {
 
     #checkbox {
         width: min-content;
+        @media (max-width:600px) {
+            width: 24px;
+        }
     }
 
     p {
@@ -135,4 +143,8 @@ input {
     position: relative;
     bottom: 15px;
     right: -40%;
+    @media (max-width:375px) {
+        right: -35%;
+        bottom: 0;
+    }
 }

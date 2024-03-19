@@ -18,9 +18,15 @@ import { PrivacyPolicyComponent } from "./../privacy-policy/privacy-policy.compo
 })
 export class HeaderComponent {
   @Output() togglePrivacyPolicyEvent = new EventEmitter<void>();
-
   togglePrivacyPolicy(): void {
     this.togglePrivacyPolicyEvent.emit();
   } 
+
+  @Output() languageChanged = new EventEmitter<string>();
+  changeLang(lang: string): void {
+    console.log('Selected language:', lang);
+    
+    this.languageChanged.emit(lang);
+  }
 
 }

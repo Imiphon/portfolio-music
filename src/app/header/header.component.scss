@@ -23,7 +23,15 @@
     cursor: pointer;
 }
 
-.mat-menu-panel {
-    background-color: antiquewhite;
-    /* Anpassungen für das Popup-Menü */
-}
+.item-style {
+    line-height: 26px;
+    padding: 10px; 
+    margin: 0; 
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    &:hover{
+        color: rgb(50, 50, 50) !important;
+    }
+  }
+

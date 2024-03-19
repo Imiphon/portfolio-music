@@ -4,15 +4,14 @@
     <div class="burger-frame">
         <!-- Trigger for popup -->
         <mat-icon [matMenuTriggerFor]="menu">menu</mat-icon>
-        <mat-menu #menu="matMenu">
-            <a mat-menu-item href="#aboutMe">about me</a>
-            <a mat-menu-item href="#contactFrame">contact</a>
-            <p (click)="togglePrivacyPolicy()">privacy policy</p>
+        <mat-menu #menu="matMenu" class="burger-menu">
+            <a class="item-style" href="#aboutMe">about me</a>
+            <a class="item-style" mat-menu-item href="#contactFrame">contact</a>
+            <p class="item-style" (click)="togglePrivacyPolicy()">privacy policy</p>
+            <p class="item-style" (click)="changeLang('en')">english</p>
+            <p class="item-style" (click)="changeLang('de')">deutsch</p>
+            <p class="item-style" (click)="changeLang('fr')">français</p>
         </mat-menu>
+
     </div>
 </div>
-
-
-
-            <!--<a mat-menu-item href="#">privacy policy</a>-->
-            <!--<p (click)="showPrivacyPolicy = true">privacy policy</p>-->

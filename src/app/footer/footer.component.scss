@@ -11,9 +11,16 @@
     
     width:fit-content;
     @include dFlex($ai:start);
-    width: 100%;
+    width: 100%;    
     img {
         margin-left: 12px;
+    }    
+}
+#xing {
+    @include dFlex();
+    img {
+        width: auto;
+    height: 32px;
     }
 }
 

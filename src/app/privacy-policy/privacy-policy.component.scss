@@ -1,8 +1,53 @@
-.privacy-policy {
+@import './../../styles.scss';
+
+.policy-frame {
     position: absolute;
-    left: 0;
     top: 80px;
-    
+    left: 0;
     width: 100%;
+    @include dFlex();
+}
+
+.privacy-policy {
+    width: 70%;
+    padding: 32px;
     background-color: white;
+    border: 8px solid rgb(207, 187, 146);
+    border-radius: 10px;
+    @include dFlex();
+
+    @media (max-width: 540px) {
+        padding: 16px;
+    }
+}
+
+button {
+    top: 2px;
+    right: 2px;
+    border: none;
+    background-color: unset;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+    @media (max-width: 540px) {
+        img {
+            width: 60%;
+            height: auto;
+        }
+    }
+}
+
+.close {
+    width: 100%;
+    position: relative;
+    top: -16px;
+    right: -16px;
+    @include dFlex($ai: flex-end);
+
+    @media (max-width: 540px) {
+        top: -10px;
+        right: -26px;
+    }
 }
