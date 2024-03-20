@@ -22,7 +22,6 @@ export class AboutMeComponent implements OnInit {
   }
 
   onLanguageChange(lang: string): void {
-    console.log('onLanguageChanged in about-me.comp runs');
     this.loadText(lang); 
   }
 

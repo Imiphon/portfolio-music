@@ -6,8 +6,8 @@
         <div class="subtitle">
             <div>Say Hi!</div>
         </div>
-        <p class="quest orange">Want to discuss a new project?</p>
-        <p class="hello">Say hello! let's discuss your ideas and make it happen</p>
+        <p class="quest orange" [innerHTML]="contactOrange"></p>
+        <p class="hello" [innerHTML]="contactHello"></p>
 
         <form #contactForm="ngForm" class="contact-form" (ngSubmit)="onSubmit(contactForm)">
             <div>
@@ -48,7 +48,10 @@
             <br>
             <button type="submit" value="Send Message">Send Message</button>
         </form>
-        <a class="arrow-up" href="#header"><img src="assets/icons/arrow-white-up.png" alt=""></a>
+        <div class="arrow-frame">
+            <a class="arrow-up" href="#header"><img src="assets/icons/arrow-white-up.png" alt=""></a>
+            <p>scoll<br>up</p>
+        </div>
         
     </div>
 
