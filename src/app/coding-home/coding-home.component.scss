@@ -2,33 +2,43 @@
 
 .headline-frame {
     position: relative;
-    top: 204px;
+    top: 120px;
     width: 1440px;
     max-width: 1440px;
-    height: 840px;
+    height: 840px; 
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     @media (max-width:1440px) {
         top: 2vw;
-        width: 100%;
+        width: 100vw;
         height: auto; 
     }  
 }
+.in-head-frame {
+    width: fit-content;
+    @include dFlex();
+}
 
 .headline {
-    width: 100%;
-    margin-bottom: 1vw; 
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 2vw; 
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: 8.89vw; // font-size:128px for .main-frame.width: 1440px in vw
+    font-size: 8vw; // font-size:128px for .main-frame.width: 1440px in vw
     line-height: 8.89vw;
     letter-spacing: -2.5%;
     text-align: center;
+    @media (max-width:1440px) {
+        height: fit-content; 
+        font-size: 8.89vw; // 
+        line-height: 8.89vw;
+    } 
 }
 
 .line-name-frame {
-    width:70%;
+    width:100%;
     max-width: 100%;
     //margin: 20px;
     @include dFlex($fd:row,$jc:flex-end); 
@@ -39,11 +49,11 @@
 }
 
 .line {
-    width: 100%; /* Breite der Linie */
-    height: 2px; /* Höhe der Linie anpassen, um mit "F" von "Frontend" zu beginnen */
-    background-color: black; /* Farbe der Linie */
+    width: 100%; 
+    height: 2px; 
+    background-color: black; 
     margin-left: 32px;
-    margin-right: 10px; /* Abstand zwischen Linie und Name */
+    margin-right: 10px; 
 }
 
 .name {
@@ -60,9 +70,12 @@
     white-space: nowrap; 
 }
 
-.arrow-down-frame {
-    width: 100%;
+.brand-arrow-frame {
+    width: 92%;
     @include dFlex($jc:space-between, $fd:row); 
+    div {
+        max-height: min-content;
+    }
 }
 
 .brand {
@@ -78,7 +91,7 @@
 
 .img-text-frame {
     @include dFlex();
-    margin-right: 150px;
+    //margin-right: 150px;
     @media (max-width:1440px) {
         margin-right: 0;
     }

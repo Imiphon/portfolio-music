@@ -3,18 +3,19 @@
 .about-me-frame {
     margin: 0 3vw;
     max-width: 100% !important;
+    min-height: 448px;
+    height: fit-content; //840px; 
     @include dFlex($jc: flex-start, $ai: center);
 
     @media (max-width:375px) {
         flex-direction: column;
         margin: 10px;
-
+        min-height: fit-content;
     }
 }
 
 .text-pic-frame {
     @include dFlex($jc: flex-start, $ai: flex-start, $fd: row);
-    //padding-left: 24px;
     gap: 32px;
 
     @media (max-width:375px) {
@@ -27,11 +28,14 @@
 
 .left-frame {
     width: 50%;
-    @include dFlex();
+    height: fit-content;
+    @include dFlex($ai: flex-end);
 
     @media (max-width:375px) {
         width: 100%;
+        height: 320px;
         padding: 12px;
+        align-items: center;
     }
 }
 
@@ -44,8 +48,7 @@ a {
 }
 
 #a1 {
-    //for screen under the text
-    margin-top: 10%;
+    margin: auto;
 
     @media (max-width:375px) {
         display: none;
@@ -70,7 +73,7 @@ a {
     height: auto;
     margin-bottom: 10%;
 
-    @media (min-width:375px) {
+    @media (min-width:376px) {
         display: none;
     }
 }
@@ -80,25 +83,40 @@ a {
     @include dFlex($jc: flex-start, $ai: flex-start);
     overflow-y: auto;
     padding: 10px;
-    height: 224px;
+
     gap: 52px;
 
     @media (max-width:1440px) {
-        height: 170px;
+        height: 224px;
         gap: 3.6%;
     }
 
     @media (max-width:375px) {
         width: 80%;
+        height: 170px;
+    }
+}
+
+.btn-frame {
+    width: 100%;
+    margin-top: 16px;
+    @include dFlex($jc: space-between, $fd: row);
+
+    @media (max-width:375px) {
+        flex-direction: column;
     }
 }
 
 .sub-title {
     @include subTitle();
-    //height: 354px;
-    margin-bottom: 2px;
+    margin-bottom: 24px;
     padding: 10px;
     text-align: left;
+
+    @media (max-width:900px) {
+        margin-bottom: 12px;
+    }
+
     @media (max-width:375px) {
         margin-bottom: 0;
     }
@@ -129,6 +147,7 @@ a {
 .arrow-left-down {
     position: relative;
     top: 32px;
+
     @media (max-width:375px) {
         margin-bottom: 32px;
     }
@@ -143,15 +162,72 @@ a {
 
     @media (max-width:375px) {
         width: 100%;
-        
+
     }
 
     img {
         width: 30vw;
         height: auto;
         border-radius: 5px;
+
         @media (max-width:375px) {
             width: 80vw;
-        } 
+        }
     }
+}
+
+.text-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+
+.overlay-content {
+    height: 90%;
+    width: 80%;
+    background-color: white;
+    padding: 20px;
+
+    border-radius: 5px;
+    @include dFlex($ai: end, );
+
+    button {
+        position: relative;
+        top: 2px;
+        right: 2px;
+        border: none;
+        background-color: unset;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 540px) {
+            img {
+                width: 32px;
+                height: auto;
+            }
+        }
+    }
+}
+
+.overlay-content .text {
+    height: 100%;
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 27.6px;
+    overflow-y: auto;
+    .element::-webkit-scrollbar {
+        display: none; /* Versteckt die Scrollleisten für WebKit-basierte Browser */
+    }
+    
 }
