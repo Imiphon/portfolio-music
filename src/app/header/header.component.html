@@ -5,12 +5,12 @@
         <!-- Trigger for popup -->
         <mat-icon [matMenuTriggerFor]="menu">menu</mat-icon>
         <mat-menu #menu="matMenu" class="burger-menu">
-            <a class="item-style" href="#aboutMe">about me</a>
-            <a class="item-style" mat-menu-item href="#contactFrame">contact</a>
-            <p class="item-style" (click)="togglePrivacyPolicy()">privacy policy</p>
-            <p class="item-style" (click)="changeLang('en')">english</p>
-            <p class="item-style" (click)="changeLang('de')">deutsch</p>
-            <p class="item-style" (click)="changeLang('fr')">français</p>
+            <div class="item-style"><a href="#aboutMe">about me</a></div>
+            <div class="item-style"><a href="#contactFrame">contact</a></div>
+            <div class="item-style" (click)="togglePrivacyPolicy()">privacy policy</div>
+            <div class="item-style" (click)="changeLang('en')">english</div>
+            <div class="item-style" (click)="changeLang('de')">deutsch</div>
+            <div class="item-style" (click)="changeLang('fr')">français</div>
         </mat-menu>
 
     </div>

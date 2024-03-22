@@ -24,14 +24,19 @@
 }
 
 .item-style {
-    line-height: 26px;
-    padding: 10px; 
+    line-height: 8px;
+    padding: 10px 16px; 
     margin: 0; 
+  }
+
+  .item-style,
+  a {
     text-decoration: none;
-    color: black;
+    color: black;    
     cursor: pointer;
     &:hover{
-        color: rgb(50, 50, 50) !important;
+        color: rgb(117, 116, 116) !important;
     }
   }
+
 

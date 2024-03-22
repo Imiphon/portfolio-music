@@ -55,6 +55,12 @@ growingIndex: number | null = null;
     const clickX = event.clientX;
     const clickY = event.clientY;
 
+    let currDrop = new Audio('assets/sounds/drop1.mp3')
+    currDrop.play();
+    currDrop.onended = () => {
+     currDrop.remove();
+    }
+  
     this.popups.push({
       content: name,
       positionX: clickX + 'px',

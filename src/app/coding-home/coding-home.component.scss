@@ -5,16 +5,18 @@
     top: 120px;
     width: 1440px;
     max-width: 1440px;
-    height: 840px; 
+    height: 840px;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
+
     @media (max-width:1440px) {
         top: 2vw;
         width: 100vw;
-        height: auto; 
-    }  
+        height: auto;
+    }
 }
+
 .in-head-frame {
     width: fit-content;
     @include dFlex();
@@ -23,43 +25,45 @@
 .headline {
     width: fit-content;
     height: fit-content;
-    margin-bottom: 2vw; 
+    margin-bottom: 2vw;
     font-family: 'Syne', sans-serif;
     font-weight: 800;
     font-size: 8vw; // font-size:128px for .main-frame.width: 1440px in vw
     line-height: 8.89vw;
     letter-spacing: -2.5%;
     text-align: center;
+
     @media (max-width:1440px) {
-        height: fit-content; 
+        height: fit-content;
         font-size: 8.89vw; // 
         line-height: 8.89vw;
-    } 
+    }
 }
 
 .line-name-frame {
-    width:100%;
+    width: 100%;
     max-width: 100%;
     //margin: 20px;
-    @include dFlex($fd:row,$jc:flex-end); 
+    @include dFlex($fd: row, $jc: flex-end);
+
     @media (max-width:1440px) {
         width: 100%;
         margin-bottom: 2vw;
-    } 
+    }
 }
 
 .line {
-    width: 100%; 
-    height: 2px; 
-    background-color: black; 
+    width: 100%;
+    height: 2px;
+    background-color: black;
     margin-left: 32px;
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 
 .name {
     font-family: 'Overpass', sans-serif;
     width: auto;
-    margin-bottom: 0px; 
+    margin-bottom: 0px;
     margin-right: 32px;
     font-weight: 700;
     font-size: 3.33vw; // font-size:48px for .main-frame.width: 1440px in vw
@@ -67,12 +71,13 @@
     letter-spacing: -2.5%;
     text-align: center;
     color: #FF9900;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 .brand-arrow-frame {
     width: 92%;
-    @include dFlex($jc:space-between, $fd:row); 
+    @include dFlex($jc: space-between, $fd: row);
+
     div {
         max-height: min-content;
     }
@@ -80,25 +85,32 @@
 
 .brand {
     transform: rotate(-90deg);
-   transform-origin: center;
+    transform-origin: center;
     white-space: nowrap;
     position: relative;
-    @media (max-width:1440px) {
-        left: -14vw;
+    top: 16px;
+    left: -63px;
+
+    @media (max-width:1440px) {               
         font-size: 0.8rem;
+    }
+    @media (max-width:375px) {
+        font-size: 0.6rem;
+        left: -32px;
     }
 }
 
 .img-text-frame {
     @include dFlex();
+
     //margin-right: 150px;
     @media (max-width:1440px) {
         margin-right: 0;
     }
+
     img {
         @media (min-width:1440px) {
             height: 12vw;
-        }       
+        }
     }
 }
-
