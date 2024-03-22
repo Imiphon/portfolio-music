@@ -2,9 +2,11 @@
 
 .policy-frame {
     position: absolute;
-    top: 80px;
+    top: 0;
     left: 0;
     width: 100%;
+    padding: 12px;
+    background-color: rgba(0,0,0,0.5);
     @include dFlex();
 }
 
@@ -12,7 +14,7 @@
     width: 70%;
     padding: 32px;
     background-color: white;
-    border: 8px solid rgb(207, 187, 146);
+    //border: 8px solid rgb(207, 187, 146);
     border-radius: 10px;
     @include dFlex();
 

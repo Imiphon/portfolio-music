@@ -46,18 +46,8 @@ a {
     text-decoration: none;
     color: black;
 }
-
-#a1 {
-    margin: auto;
-
-    @media (max-width:375px) {
-        display: none;
-    }
-}
-
 .a2-frame {
-    position: relative;
-
+    //for mobile in top of the subtitle
     margin: 12px 0 12px 0;
     @include dFlex();
 
@@ -68,12 +58,38 @@ a {
 
 #a2 {
     //for mobile in top of the subtitle
-    width: 7em;
     white-space: nowrap;
     height: auto;
     margin-bottom: 10%;
 
     @media (min-width:376px) {
+        display: none;
+    }
+}
+
+.btn-frame {
+    width: 100%;
+    margin-top: 16px;
+    @include dFlex($jc: space-between, $fd: row);
+
+    @media (max-width:375px) {
+        flex-direction: column;
+    }
+}
+
+#a1 {
+    margin: auto;
+
+    @media (max-width:375px) {
+        display: none;
+    }
+}
+
+#zoom-text {
+    opacity: 0.8;
+    width: 24px;
+    padding-right: 32px;
+    @media (min-width:1000px) {
         display: none;
     }
 }
@@ -94,16 +110,6 @@ a {
     @media (max-width:375px) {
         width: 80%;
         height: 170px;
-    }
-}
-
-.btn-frame {
-    width: 100%;
-    margin-top: 16px;
-    @include dFlex($jc: space-between, $fd: row);
-
-    @media (max-width:375px) {
-        flex-direction: column;
     }
 }
 

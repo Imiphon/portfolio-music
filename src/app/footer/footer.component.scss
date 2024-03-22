@@ -26,23 +26,36 @@
 
 .brand-link-frame{
     color: white;
-    @include dFlex($fd:row, $jc:space-between);
-    //width: -webkit-fill-available;    
+    @include dFlex($fd:row, $ai: baseline, $jc:space-between);
     max-width: 1440px;
     width: 96%;
+    margin-bottom: 32px;
+}
+
+.brand {
+    margin-left: 20px;
 }
 
 .link-frame {
-    @include dFlex($fd:row, $jc:space-between);
-    gap: 32px;
-    margin-bottom: 32px;
-
+    width: 50%;
+    height: 100%;
+    @include dFlex($fd:row);
+    gap: 1em;
+    @media (max-width: 390px) {
+        flex-wrap: wrap;
+        gap: 0;
+    }
     a {
+        @include dFlex();
+        padding: 4px;
         text-decoration: none;
         transition: transform 0.3s ease;
         &:hover {
             cursor: pointer;
             transform: scale(1.2);
+        }
+        img {
+            margin: auto;
         }
     }
 }

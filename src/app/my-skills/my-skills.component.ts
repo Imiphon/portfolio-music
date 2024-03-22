@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,13 +8,48 @@ import { CommonModule } from '@angular/common';
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss'
 })
-export class MySkillsComponent {
+export class MySkillsComponent implements OnInit{
+  images = [
+    { name: 'angular', src: 'assets/icons/angular.png' },
+    { name: 'typescript', src: 'assets/icons/typescript.png' },
+    { name: 'javascript', src: 'assets/icons/javascript.png' },
+    { name: 'html5', src: 'assets/icons/html.png' },
+    { name: 'css', src: 'assets/icons/css.png' },
+    { name: 'firebase', src: 'assets/icons/firebase.png' },
+    { name: 'git', src: 'assets/icons/git.png' },
+    { name: 'scrum', src: 'assets/icons/scrum.png' },
+    { name: 'api', src: 'assets/icons/api.png' },
+    { name: 'materialDesign', src: 'assets/icons/materialDesign.png' },
+    { name: 'logic', src: 'assets/icons/logic-black.png' },
+    { name: 'protools', src: 'assets/icons/protools-black.png' }
+];
+
+growingIndex: number | null = null;
 
   popups: Array<{
     content: string;
     positionX: string;
     positionY: string;
   }> = [];
+
+    constructor() {  }
+
+  ngOnInit(): void {
+    this.growingIntervall();
+  }
+
+  growingIntervall() {
+    setInterval(() => {
+      this.growingIndex = Math.floor(Math.random() * this.images.length);
+    setTimeout(() => {
+      this.growingIndex = null;
+    }, 1000);
+    }, 2000 );
+  }
+
+  isGrowing(index:number):boolean{
+    return this.growingIndex === index;
+  }
 
   openPopup(name: string, event: MouseEvent): void {
     const clickX = event.clientX;

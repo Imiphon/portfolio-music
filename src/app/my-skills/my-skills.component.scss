@@ -4,8 +4,7 @@
    // position: relative;
     left: 0;
     width: 100%;
-    @include dFlex();
-   
+    @include dFlex();   
 }
 
 .sub-title {
@@ -40,8 +39,6 @@
     //gap: 5.4vw; //78px of 1440px
     @include dFlex();
     border: 4px solid black;
-
-
 }
 
 .img-frame {
@@ -59,11 +56,16 @@
         }
         &:hover{
             cursor: pointer;
-            transform: scale(1.1);
+            //transform: scale(1.1);
+            //transition: transform 0.3s ease;
         }
     }
 }
 
+.grow {
+    transform: scale(1.1); 
+    transition: transform 0.5s ease;
+}
 
 .arrow-right-down {
     position: relative;
