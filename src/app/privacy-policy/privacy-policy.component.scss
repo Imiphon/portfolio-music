@@ -1,23 +1,25 @@
 @import './../../styles.scss';
 
 .policy-frame {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 12px;
+    height: 100vh;
     background-color: rgba(0,0,0,0.5);
+    z-index: 2;
     @include dFlex();
 }
 
 .privacy-policy {
     width: 70%;
-    padding: 32px;
+    height: 80vh;
+    padding: 60px;
     background-color: white;
     //border: 8px solid rgb(207, 187, 146);
     border-radius: 10px;
     @include dFlex();
-
+    overflow-y: auto;
     @media (max-width: 540px) {
         padding: 16px;
     }
@@ -28,7 +30,7 @@ button {
     right: 2px;
     border: none;
     background-color: unset;
-
+    opacity: 0.8;
     &:hover {
         cursor: pointer;
         transform: scale(1.1);
@@ -43,13 +45,12 @@ button {
 
 .close {
     width: 100%;
+    height: auto;
     position: relative;
-    top: -16px;
-    right: -16px;
     @include dFlex($ai: flex-end);
+}
 
-    @media (max-width: 540px) {
-        top: -10px;
-        right: -26px;
-    }
+.text {
+    position: relative;
+    height: -webkit-fill-available;
 }

@@ -91,9 +91,10 @@
     top: 16px;
     left: -63px;
 
-    @media (max-width:1440px) {               
+    @media (max-width:1440px) {
         font-size: 0.8rem;
     }
+
     @media (max-width:375px) {
         font-size: 0.6rem;
         left: -32px;
@@ -102,15 +103,14 @@
 
 .img-text-frame {
     @include dFlex();
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
 
-    //margin-right: 150px;
-    @media (max-width:1440px) {
-        margin-right: 0;
-    }
-
-    img {
-        @media (min-width:1440px) {
-            height: 12vw;
-        }
+.arrow-down img {
+    @media (max-width:375px) {
+        width: auto;
+        height: 128px;
     }
 }

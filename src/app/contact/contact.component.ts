@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LanguageService } from "./../language.service";
+import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.component';
 
 @Component({
   selector: 'app-contact',
@@ -10,6 +11,7 @@ import { LanguageService } from "./../language.service";
   imports: [
     FormsModule,
     CommonModule,
+    PrivacyPolicyComponent
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
@@ -17,8 +19,8 @@ import { LanguageService } from "./../language.service";
 export class ContactComponent implements OnInit {
   contactOrange: string = '';
   contactHello: string = '';
-  constructor(private http: HttpClient, private languageService: LanguageService) {}
- 
+  constructor(private http: HttpClient, private languageService: LanguageService) { }
+
   ngOnInit(): void {
     this.languageService.getCurrentLanguage().subscribe(lang => {
       this.onLanguageChange(lang);
@@ -26,7 +28,7 @@ export class ContactComponent implements OnInit {
   }
 
   onLanguageChange(lang: string): void {
-    this.loadText(lang); 
+    this.loadText(lang);
   }
 
   loadText(lang: string): void {
@@ -66,7 +68,7 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(ngForm: NgForm) {
-    
+
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       // more headers possible
@@ -75,9 +77,9 @@ export class ContactComponent implements OnInit {
     this.allTouched(ngForm);
     if (ngForm && ngForm.submitted && !this.mailTest) {
       console.log('Form data:', this.contactData);
-      
+
       //conversion to JSON works automaticly with HTTPClient, so I take directly contactData
-      this.http.post(this.post.endPoint, this.contactData, { headers, responseType: 'text' }) 
+      this.http.post(this.post.endPoint, this.contactData, { headers, responseType: 'text' })
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
@@ -93,5 +95,10 @@ export class ContactComponent implements OnInit {
       this.allTouched(ngForm);
       console.log('mailTest works!');
     }
+  }
+
+  @Output() togglePrivacyPolicyEvent = new EventEmitter<void>();
+  togglePrivacyPolicy(): void {      
+    this.togglePrivacyPolicyEvent.emit();    
   }
 }

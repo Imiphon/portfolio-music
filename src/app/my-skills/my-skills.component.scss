@@ -1,8 +1,6 @@
 @import './../../styles.scss';
 
 .my-skills-frame {
-   // position: relative;
-    left: 0;
     width: 100%;
     @include dFlex();   
 }
@@ -10,33 +8,31 @@
 .sub-title {
     width: fit-content !important;
     position: relative;
-    top: 3.6vw; //52px;
+    top: 3.6vw; 
     background-color: #FFFCF3;
     display: inline;
     @include subTitle();
-    //height: 354px;
-    margin-bottom: 2px;
     padding: 10px;
 
-    @media (max-width:1440px) {
-        font-size: 5.42vw;
-        line-height: 5.42vw;
+    @media (max-width:900px) {
+        top: 4vw;
+    }
+    @media (max-width:600px) {
+        top: 5vw;
     }
 
     @media (max-width:375px) {
+        top: 3.6vw;
         font-size: 11vw;
-        margin-bottom: 35px;
         text-align: center;
-        padding: 0;
+        padding: 0 12px;
     }
 }
 
 .skills-frame {
-    //width: 1200px;
     height: auto; //592px;
     padding: 4vw;
     max-width: 80%;
-    //gap: 5.4vw; //78px of 1440px
     @include dFlex();
     border: 4px solid black;
 }

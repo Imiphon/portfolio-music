@@ -1,4 +1,4 @@
-import { Component, importProvidersFrom } from '@angular/core';
+import { Component } from '@angular/core';
 import { HeaderComponent } from "./../header/header.component";
 import { CodingHomeComponent } from "./../coding-home/coding-home.component";
 import { AboutMeComponent } from "./../about-me/about-me.component";

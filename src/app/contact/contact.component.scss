@@ -94,7 +94,7 @@ input {
     background-color: black !important;
     border: none;
     border-bottom: 2px solid white;
-  
+    border-radius: 0;
 }
 
 .message {
@@ -104,8 +104,7 @@ input {
 .checkbox-frame {
     display: flex;
     width: 100%;
-    font-size: 0.7vw;
-    //text-align: center;    
+    font-size: 0.7vw;   
     line-height: 1.5vw;
     flex-direction: row !important;
 
@@ -118,14 +117,17 @@ input {
 
     p {
         width: fit-content;
-        margin: 3px 0 0 12px;
+        margin-left: 12px;
         font-size: 10px;
         line-height: 11px;
     }
 
-    a {
+    button {
         text-decoration: none;
         color: #FF9900;
+        border: none;
+        font-size: 10px;
+        line-height: 11px;
     }
 
     @media (max-width: 390px) {
@@ -143,6 +145,8 @@ input {
     position: relative;
     bottom: 15px;
     right: -40%;
+    cursor: pointer;
+    text-decoration: none;
     @media (max-width:375px) {
         right: -35%;
         bottom: 0;

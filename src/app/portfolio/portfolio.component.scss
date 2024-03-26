@@ -99,6 +99,11 @@
     }
 }
 
+.arrow-frame{
+    width: 100%;
+    @include dFlex($ai: flex-end);
+}
+
 .right-arrow {
     position: relative;
     top: 32px;

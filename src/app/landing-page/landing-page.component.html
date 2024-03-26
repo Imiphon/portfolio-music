@@ -6,7 +6,7 @@
     <app-about-me></app-about-me>
     <app-my-skills></app-my-skills>
     <app-portfolio></app-portfolio>
-    <app-contact></app-contact>
+    <app-contact (togglePrivacyPolicyEvent)="togglePrivacyPolicy()"></app-contact>
     <app-privacy-policy *ngIf="showPrivacyPolicy" (closeEvent)="togglePrivacyPolicy()"></app-privacy-policy>
     <app-footer></app-footer>
 </div>

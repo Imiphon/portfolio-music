@@ -39,7 +39,7 @@
     }
 }
 
-a {
+#a1, #a2 {
     // height: 68px !important;
     border: 4px solid black !important;
     padding: 12px 1em 12px 1em !important;
@@ -89,6 +89,8 @@ a {
     opacity: 0.8;
     width: 24px;
     padding-right: 32px;
+    cursor: pointer;
+    
     @media (min-width:1000px) {
         display: none;
     }

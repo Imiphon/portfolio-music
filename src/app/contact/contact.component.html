@@ -2,12 +2,12 @@
     <div class="triangle">
 
     </div>
-    <div class="form-frame" >
+    <div class="form-frame">
         <div class="subtitle">
             <div>Say Hi!</div>
         </div>
         <p class="quest orange" [innerHTML]="contactOrange"></p>
-        <p class="hello" [innerHTML]="contactHello"></p>
+        <p class="hello" id="helloContact" [innerHTML]="contactHello"></p>
 
         <form #contactForm="ngForm" class="contact-form" (ngSubmit)="onSubmit(contactForm)">
             <div>
@@ -31,28 +31,30 @@
                 <div *ngIf="messageField.invalid && messageField.touched" class="error-message">
                     Please enter a message.
                 </div>
-                    
+
             </div>
             <br>
             <div class="checkbox-frame">
                 <input type="checkbox" name="privacy" id="checkbox" [(ngModel)]="contactData.privacy" required
                     #privacyField="ngModel">
                 <p>
-                    I've read the <a href="URL_DEINER_DATENSCHUTZERKLÄRUNG" target="_blank">privacy policy</a> and agree
-                    to the processing of my data as outlined.
-                </p>
+                    I've read the 
+                    <button (click)="togglePrivacyPolicy()" type="button" >privacy policy</button>
+                     and agree to the processing of my data as outlined.
+                </p> 
                 <div *ngIf="privacyField.invalid && privacyField.touched" class="error-message">
                     You must agree to the privacy policy.
                 </div>
+                
             </div>
             <br>
             <button type="submit" value="Send Message">Send Message</button>
         </form>
-        <div class="arrow-frame">
-            <a class="arrow-up" href="#header"><img src="assets/icons/arrow-white-up.png" alt=""></a>
+        <a class="arrow-frame" href="#header">
+            <div class="arrow-up"><img src="assets/icons/arrow-white-up.png" alt=""></div>
             <p>scoll<br>up</p>
-        </div>
-        
+        </a>
+
     </div>
 
 </div>
