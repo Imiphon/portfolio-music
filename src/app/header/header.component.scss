@@ -1,9 +1,9 @@
 @import './../../styles.scss';
 
 .header-frame {
+    @include dFlex($jc: space-between, $fd: row);
     width: 1440px;
     height: 80px;
-    @include dFlex($jc: space-between, $fd: row);
     font-weight: 800;
     font-size: larger;
     img {

@@ -1,10 +1,10 @@
 @import './../../styles.scss';
 
 .footer-frame {
+    @include dFlex($fd: row-reverse, $jc: space-between);
     background-color: black;
     width: 100vw;
     max-width: 1440px;
-    @include dFlex($fd: row-reverse, $jc: space-between);
 
     @media (max-width: 490px) {
         @include dFlex();
@@ -22,11 +22,11 @@
 }
 
 .logo-brand-frame {
+    @include dFlex($fd: column, $ai:flex-start);
     margin-left: 32px;
     width: 100%;
     color: white;
     margin-bottom: 32px;
-    @include dFlex($fd: column, $ai:flex-start);
 
     @media (max-width: 490px) {
         margin-left: 0;
@@ -43,16 +43,13 @@
 .brand {
     padding-left: 3vw;
 }
-.logo {
-    padding-left: 12px;
-}
 
 .link-frame {
-    color: white;
     @include dFlex($fd: row, $ai: baseline, $jc: space-between);
+    color: white;
     max-width: 250px;
     width: 50%;
-    margin: 0 32px 5vw 0;
+    margin-right: 4vw;
     gap: 1em;
 
     a {

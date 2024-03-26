@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LanguageService } from "./../language.service";
 import { CommonModule } from '@angular/common';
@@ -23,7 +23,7 @@ export class AboutMeComponent implements OnInit {
       this.onLanguageChange(lang);
     })
   }
-  //maby necassary if it used again in btns directly in this component.
+  
   onLanguageChange(lang: string): void {
     this.loadText(lang); 
   }
@@ -35,7 +35,6 @@ export class AboutMeComponent implements OnInit {
   }
 
   toggleTextOverlay() {
-    // Diese Methode schaltet den Zustand des Overlays um (anzeigen/verstecken)
     this.showTextOverlay = !this.showTextOverlay;
   }
 }

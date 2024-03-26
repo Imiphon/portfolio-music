@@ -47,8 +47,6 @@ export class ContactComponent implements OnInit {
 
   mailTest = false;
 
-  // http = inject(HttpClient); //injected & provided from app.config.ts NOW INJECTED AT CONSTRUCTOR
-
   post = {
     endPoint: 'https://www.mensching.online/sendMail.php',
     //payload = contactData 

@@ -18,8 +18,8 @@
 }
 
 .in-head-frame {
-    width: fit-content;
     @include dFlex();
+    width: fit-content;
 }
 
 .headline {
@@ -41,10 +41,9 @@
 }
 
 .line-name-frame {
+    @include dFlex($fd: row, $jc: flex-end);
     width: 100%;
     max-width: 100%;
-    //margin: 20px;
-    @include dFlex($fd: row, $jc: flex-end);
 
     @media (max-width:1440px) {
         width: 100%;
@@ -75,8 +74,8 @@
 }
 
 .brand-arrow-frame {
-    width: 92%;
     @include dFlex($jc: space-between, $fd: row);
+    width: 92%;
 
     div {
         max-height: min-content;

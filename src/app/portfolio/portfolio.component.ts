@@ -1,12 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { LanguageService } from "./../language.service";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements OnInit {
+  portfolioJoin: string = '';
+  portfolioPollo: string = '';
 
+  constructor(private languageService: LanguageService, private http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.languageService.getCurrentLanguage().subscribe(lang => {
+      this.onLanguageChange(lang);
+    })
+  }
+
+  onLanguageChange(lang: string): void {
+    this.loadText(lang);
+  }
+
+  loadText(lang: string): void {
+    this.http.get<any>('assets/text-data.json').subscribe(data => {
+      this.portfolioJoin = data[lang]['portfolioJoin'];
+      this.portfolioPollo = data[lang]['portfolioPollo'];
+    });
+  }
 }

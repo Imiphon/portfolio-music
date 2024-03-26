@@ -1,22 +1,23 @@
 @import './../../styles.scss';
 
 .my-skills-frame {
+    @include dFlex();
     width: 100%;
-    @include dFlex();   
 }
 
 .sub-title {
+    @include subTitle();
     width: fit-content !important;
     position: relative;
-    top: 3.6vw; 
+    top: 3.6vw;
     background-color: #FFFCF3;
     display: inline;
-    @include subTitle();
     padding: 10px;
 
     @media (max-width:900px) {
         top: 4vw;
     }
+
     @media (max-width:600px) {
         top: 5vw;
     }
@@ -30,10 +31,10 @@
 }
 
 .skills-frame {
+    @include dFlex();
     height: auto; //592px;
     padding: 4vw;
     max-width: 80%;
-    @include dFlex();
     border: 4px solid black;
 }
 
@@ -42,25 +43,39 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+
     img {
         width: 9vw;
-        height: 9vw;// fit-content;
+        height: 9vw;
         margin: 4vw;
+
         @media (max-width:450px) {
             width: 52px;
             height: 52px;
         }
-        &:hover{
+
+        &:hover {
             cursor: pointer;
-            //transform: scale(1.1);
-            //transition: transform 0.3s ease;
         }
     }
 }
 
 .grow {
-    transform: scale(1.1); 
-    transition: transform 0.5s ease;
+    animation: riseAndFall 1.5s infinite alternate;
+}
+
+@keyframes riseAndFall {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .arrow-right-down {
@@ -68,19 +83,20 @@
     top: 32px;
     left: -28vw; //from justify-content: center
     margin-bottom: 32px;
+
     @media (max-width:375px) {
-        left: 0; 
+        left: 0;
     }
 }
 
 .popup {
     position: fixed;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     color: black;
     background-color: rgb(229, 229, 229);
     padding: 20px;
     border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     opacity: 0;
     animation: riseUp 5s ease-out forwards;
 }
@@ -89,8 +105,9 @@
     0% {
         opacity: 1;
     }
-    100% {
-        transform: translate(-50%, -50%) translateY(-500px); 
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-500px);
         opacity: 0;
     }
 }

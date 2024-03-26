@@ -1,10 +1,10 @@
 @import './../../styles.scss';
 
 .portfolio-frame {
+    @include dFlex();
     max-width: 100%;
     width: 88vw;
     height: auto;
-    @include dFlex();
     margin-bottom: 32px;
 
     @media (max-width:375px) {
@@ -23,20 +23,22 @@
     margin-bottom: 80px;
     width: min-content; //525px;
     height: 56px;
+    p {
+        margin: 12px 0!important;
+       }
 }
 
 .examples-frame {
+    @include dFlex();
     max-width: 1440px;
     width: 100%;
     margin: 0 32px;
-    @include dFlex();
 }
 
 .img-text-frame {
-    //margin-top: 5.6vw;
+    @include dFlex($fd: row, $jc: space-between);
     width: 90%;
     margin-bottom: 64px;
-    @include dFlex($fd: row, $jc:space-between);
 
     a {
         width: 50%;
@@ -44,24 +46,57 @@
 
     img {
         width: 100%;
-        height: auto; //28vw;
+        height: auto; 
     }
 
-    .count {
-        max-height: 32vw; //460px;
-        @include dFlex($jc: flex-start,$ai:start);
+    .count,
+    .count-right {
+        @include dFlex($jc: flex-start, $ai: start);
+        max-height: 32vw; 
         font-size: 48px;
-
+        p {
+            margin: 0 !important;
+           }
     }
 
     @media (max-width:740px) {
         flex-direction: column;
 
+        .count-descript-frame,
         .count,
+        .count-right,
         a {
             width: 100%;
         }
+
+        .count,
+        .count-right {
+            align-items: center !important;
+          
+        }
+
+        .desc-r,
+        .desc-l {
+            text-align: left;
+            font-size: 16px;
+            line-height: normal;
+            margin: 16px 0;
+        }
+
     }
+}
+
+.count-right {
+    align-items: end !important;
+}
+
+.count-descript-frame {
+    width: 50%;
+}
+
+.desc-r {
+    margin: 12px 0 0 32px;
+    text-align: right;
 }
 
 .right {
@@ -75,6 +110,7 @@
 
 .left {
     align-items: start;
+
     @media (max-width:740px) {
         align-items: center;
         flex-direction: column;
@@ -83,8 +119,7 @@
 }
 
 .text {
-    width: 99%; //610px of <1440px
-    height:  auto;
+    height: auto;
     font-size: 23px;
     line-height: 27.6px;
 
@@ -94,14 +129,21 @@
     }
 
     @media (max-width:650px) {
-        font-size: 10.4px;
+        font-size: 12px;
         line-height: 12.5px;
     }
 }
 
-.arrow-frame{
-    width: 100%;
+.arrow-frame {
     @include dFlex($ai: flex-end);
+    width: 100%;
+    max-width: 1440px;
+    padding-right: 56px;
+
+    @media (max-width:375px) {
+        align-items: center;
+        padding-right: 0;
+    }
 }
 
 .right-arrow {

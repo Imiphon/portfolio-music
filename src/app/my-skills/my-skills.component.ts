@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss'
 })
-export class MySkillsComponent implements OnInit{
+export class MySkillsComponent implements OnInit {
   images = [
     { name: 'angular', src: 'assets/icons/angular.png' },
     { name: 'typescript', src: 'assets/icons/typescript.png' },
@@ -22,9 +22,11 @@ export class MySkillsComponent implements OnInit{
     { name: 'materialDesign', src: 'assets/icons/materialDesign.png' },
     { name: 'logic', src: 'assets/icons/logic-black.png' },
     { name: 'protools', src: 'assets/icons/protools-black.png' }
-];
+  ];
 
-growingIndex: number | null = null;
+  growingIndex: number | null = null;
+
+  isSoundLoaded: boolean = false;
 
   popups: Array<{
     content: string;
@@ -32,35 +34,48 @@ growingIndex: number | null = null;
     positionY: string;
   }> = [];
 
-    constructor() {  }
+  constructor() {
+  }
 
   ngOnInit(): void {
-    this.growingIntervall();
+    this.growingIntervall();     
+    this.loadSound();
   }
 
   growingIntervall() {
     setInterval(() => {
       this.growingIndex = Math.floor(Math.random() * this.images.length);
-    setTimeout(() => {
-      this.growingIndex = null;
-    }, 1000);
-    }, 2000 );
+      setTimeout(() => {
+        this.growingIndex = null;
+      }, 1000);
+    }, 2000);
   }
 
-  isGrowing(index:number):boolean{
+  isGrowing(index: number): boolean {
     return this.growingIndex === index;
+  }
+
+  loadSound() {
+    let audio = new Audio('assets/sounds/plopp.mp3');
+    audio.addEventListener('canplaythrough', () => {
+      this.isSoundLoaded = true;
+    });
+    audio.load();
   }
 
   openPopup(name: string, event: MouseEvent): void {
     const clickX = event.clientX;
     const clickY = event.clientY;
 
-    let currDrop = new Audio('assets/sounds/drop1.mp3')
-    currDrop.play();
-    currDrop.onended = () => {
-     currDrop.remove();
+    if(this.isSoundLoaded){
+      let currDrop = new Audio('assets/sounds/plopp.mp3');
+      currDrop.play();
+      currDrop.volume = 0.2;
+      currDrop.onended = () => {
+        currDrop.remove();
+      }
     }
-  
+
     this.popups.push({
       content: name,
       positionX: clickX + 'px',

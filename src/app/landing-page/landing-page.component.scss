@@ -1,16 +1,16 @@
 @import './../../styles.scss';
 
 .main-frame {
+    @include dFlex($jc:flex-start);
     width: 100vw;
     background-color: black;
-    @include dFlex($jc:flex-start);
     overflow: hidden;
 }
 
 .components-frame {
+    @include dFlex($jc:flex-start);
     max-width: 1440px;
     background-color: #FFFCF3;
     overflow: hidden;
     scrollbar-width: none; 
-    @include dFlex($jc:flex-start);
 }

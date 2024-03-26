@@ -1,6 +1,7 @@
 @import './../../styles.scss';
 
 .policy-frame {
+    @include dFlex();
     position: fixed;
     top: 0;
     left: 0;
@@ -8,17 +9,14 @@
     height: 100vh;
     background-color: rgba(0,0,0,0.5);
     z-index: 2;
-    @include dFlex();
 }
 
 .privacy-policy {
     width: 70%;
-    height: 80vh;
+    max-height: 80vh;
     padding: 60px;
     background-color: white;
-    //border: 8px solid rgb(207, 187, 146);
     border-radius: 10px;
-    @include dFlex();
     overflow-y: auto;
     @media (max-width: 540px) {
         padding: 16px;
@@ -44,10 +42,10 @@ button {
 }
 
 .close {
+    @include dFlex($ai: flex-end);
     width: 100%;
     height: auto;
     position: relative;
-    @include dFlex($ai: flex-end);
 }
 
 .text {
