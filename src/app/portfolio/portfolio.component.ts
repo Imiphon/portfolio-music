@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 export class PortfolioComponent implements OnInit {
   portfolioJoin: string = '';
   portfolioPollo: string = '';
-
+  portfolioPokemon: string = '';
   constructor(private languageService: LanguageService, private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -32,6 +32,7 @@ export class PortfolioComponent implements OnInit {
     this.http.get<any>('assets/text-data.json').subscribe(data => {
       this.portfolioJoin = data[lang]['portfolioJoin'];
       this.portfolioPollo = data[lang]['portfolioPollo'];
+      this.portfolioPokemon = data[lang]['portfolioPokemon'];
     });
   }
 }
