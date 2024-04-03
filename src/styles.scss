@@ -4,6 +4,7 @@ html {
     overflow: auto;
     scrollbar-width: none; /* Für Firefox */
     background-color: black;
+    scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar {
@@ -21,6 +22,7 @@ body {
     flex-direction: column;
     font-family: 'Overpass', sans-serif;
     scrollbar-width: none !important; 
+    scroll-behavior: smooth;
 }
 
 p,

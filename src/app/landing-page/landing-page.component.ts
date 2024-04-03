@@ -9,6 +9,7 @@ import { FooterComponent } from "./../footer/footer.component";
 import { PrivacyPolicyComponent } from "./../privacy-policy/privacy-policy.component";
 import { MatDialog } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
+import { LegalNoticeComponent } from '../legal-notice/legal-notice.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -22,6 +23,7 @@ import { CommonModule } from '@angular/common';
     PortfolioComponent,
     ContactComponent,
     PrivacyPolicyComponent,
+    LegalNoticeComponent,
     CommonModule,
   ],
   templateUrl: './landing-page.component.html',
@@ -31,8 +33,13 @@ export class LandingPageComponent {
   constructor(public dialog: MatDialog) { }
 
   showPrivacyPolicy: boolean = false;
+  showLegalNotice:boolean = false;
 
   togglePrivacyPolicy(): void {
-    this.showPrivacyPolicy = !this.showPrivacyPolicy;
+    this.showPrivacyPolicy = !this.showPrivacyPolicy;    
+  }
+
+  toggleLegalNotice(): void {
+    this.showLegalNotice = !this.showLegalNotice;
   }
 }

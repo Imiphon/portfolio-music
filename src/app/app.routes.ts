@@ -4,8 +4,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 
 export const routes: Routes = [
   { path: '', component: LandingPageComponent },
-//  { path: '/coding/portfolio/', redirectTo: '', pathMatch: 'full' },
-//  { path: '/angular-projects/portfolio/', redirectTo: '', pathMatch: 'full' },
+  { path: 'coding/portfolio/', redirectTo: '', pathMatch: 'full' },
+  { path: 'angular-projects/portfolio/', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({

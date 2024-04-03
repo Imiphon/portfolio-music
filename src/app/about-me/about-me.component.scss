@@ -30,6 +30,7 @@
     @include dFlex($ai: flex-end);
     width: 50%;
     height: fit-content;
+    max-height: 60vh;
 
     @media (max-width:375px) {
         width: 100%;
@@ -105,8 +106,12 @@
     gap: 52px;
 
     @media (max-width:1440px) {
-        height: 224px;
+        height: 50%;
         gap: 3.6%;
+
+    @media (max-width: 650px) {       
+        max-height: 200px;
+    }
     }
 
     @media (max-width:375px) {
@@ -144,6 +149,10 @@
     @media (max-width:650px) {
         font-size: 10.4px;
         line-height: 12.5px;
+
+    @media (max-height: 600px) {       
+        max-height: 200px;
+    }
     }
 }
 
@@ -166,15 +175,16 @@
     position: relative !important;
     top: 2px;
     width: 50%;
-    height: auto;
+    //height: auto;
+
 
     @media (max-width:375px) {
         width: 100%;
-
     }
 
     img {
         width: 30vw;
+        max-width: 300px;
         height: auto;
         border-radius: 5px;
 
@@ -196,7 +206,6 @@
     align-items: center;
     z-index: 5;
 }
-
 
 .overlay-content {
     @include dFlex($ai: end, );

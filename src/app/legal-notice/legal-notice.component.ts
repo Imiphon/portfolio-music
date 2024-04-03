@@ -5,19 +5,19 @@ import { LanguageService } from "./../language.service";
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-privacy-policy',
+  selector: 'app-legal-notice',
   standalone: true,
   imports: [
     MatDialogModule,
     CommonModule,
   ],
-
-  templateUrl: './privacy-policy.component.html',
-  styleUrl: './privacy-policy.component.scss'
+  templateUrl: './legal-notice.component.html',
+  styleUrl: './legal-notice.component.scss'
 })
-export class PrivacyPolicyComponent implements OnInit {
 
-  privacyPolicy: string = '';
+export class LegalNoticeComponent implements OnInit {
+
+  legalNotice: string = '';
 
   constructor(private languageService: LanguageService, private http: HttpClient) { }
 
@@ -26,14 +26,14 @@ export class PrivacyPolicyComponent implements OnInit {
       this.onLanguageChange(lang);
     })
   }
-  //maby necassary if it used again in btns directly in this component.
+  
   onLanguageChange(lang: string): void {
     this.loadText(lang);
   }
 
   loadText(lang: string): void {
     this.http.get<any>('assets/text-data.json').subscribe(data => {
-      this.privacyPolicy = data[lang]['privacyPolicy'];
+      this.legalNotice = data[lang]['legalNotice'];
     });
   }
 

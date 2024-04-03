@@ -13,6 +13,9 @@
     @media (max-width:1440px) {
         top: 2vw;
         width: 100vw;
+    }
+
+    @media (max-width: 1140px) {
         height: auto;
     }
 }
@@ -28,7 +31,7 @@
     margin-bottom: 2vw;
     font-family: 'Syne', sans-serif;
     font-weight: 800;
-    font-size: 8vw; // font-size:128px for .main-frame.width: 1440px in vw
+    font-size: 128px; // font-size:128px for .main-frame.width: 1440px in vw
     line-height: 8.89vw;
     letter-spacing: -2.5%;
     text-align: center;
@@ -37,6 +40,7 @@
         height: fit-content;
         font-size: 8.89vw; // 
         line-height: 8.89vw;
+        margin-top: 5%;
     }
 }
 
@@ -55,7 +59,7 @@
     width: 100%;
     height: 2px;
     background-color: black;
-    margin-left: 32px;
+    margin-left: 5%;
     margin-right: 10px;
 }
 
@@ -79,6 +83,10 @@
 
     div {
         max-height: min-content;
+    }
+
+    @media (max-width:1140px) {
+        margin-top: 10%;
     }
 }
 

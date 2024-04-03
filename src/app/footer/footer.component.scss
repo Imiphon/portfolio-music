@@ -12,6 +12,10 @@
 
 }
 
+.footer-legal-combi {
+    @include dFlex();
+}
+
 #xing {
     @include dFlex();
 
@@ -22,11 +26,10 @@
 }
 
 .logo-brand-frame {
-    @include dFlex($fd: column, $ai:flex-start);
+    @include dFlex($fd: column, $ai: flex-start);
     margin-left: 32px;
     width: 100%;
     color: white;
-    margin-bottom: 32px;
 
     @media (max-width: 490px) {
         margin-left: 0;
@@ -41,7 +44,7 @@
 }
 
 .brand {
-    padding-left: 3vw;
+    padding-left: 32px;
 }
 
 .link-frame {
@@ -67,9 +70,34 @@
             margin: auto;
         }
     }
+
     @media (max-width: 490px) {
         margin-right: 0;
         justify-content: center;
         gap: 3em;
+    }
+}
+
+.legalNote {
+    width: 100%;
+    background-color: black;
+    @include dFlex($ai: end);    
+    
+    p {
+        text-decoration: none;
+        margin-right: 4vw;
+        color: white;
+        white-space: no-wrap;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    @media (max-width: 490px) { 
+        padding-top: 12px;      
+        align-items: center; 
+        
+        p {            
+            margin-right: 0;
+        }
     }
 }
