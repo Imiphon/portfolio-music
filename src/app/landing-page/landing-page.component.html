@@ -8,7 +8,8 @@
     <app-portfolio></app-portfolio>
     <app-contact (togglePrivacyPolicyEvent)="togglePrivacyPolicy()"></app-contact>
     <app-privacy-policy *ngIf="showPrivacyPolicy" (closeEvent)="togglePrivacyPolicy()"></app-privacy-policy>
-    <app-footer></app-footer>
+    <app-legal-notice *ngIf="showLegalNotice" (closeEvent)="toggleLegalNotice()"></app-legal-notice>    
+    <app-footer (toggleLegalNoticeEvent)="toggleLegalNotice()"></app-footer>
 </div>
     
 </div>

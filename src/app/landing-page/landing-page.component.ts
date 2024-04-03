@@ -33,7 +33,7 @@ export class LandingPageComponent {
   constructor(public dialog: MatDialog) { }
 
   showPrivacyPolicy: boolean = false;
-  showLegalNotice:boolean = false;
+  showLegalNotice: boolean = false;
 
   togglePrivacyPolicy(): void {
     this.showPrivacyPolicy = !this.showPrivacyPolicy;    
@@ -41,5 +41,6 @@ export class LandingPageComponent {
 
   toggleLegalNotice(): void {
     this.showLegalNotice = !this.showLegalNotice;
+    
   }
 }
