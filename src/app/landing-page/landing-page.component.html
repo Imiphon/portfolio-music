@@ -1,7 +1,8 @@
 
 <div class="main-frame">
 <div class="components-frame">
-    <app-header (togglePrivacyPolicyEvent)="togglePrivacyPolicy()"></app-header>
+    <app-header (togglePrivacyPolicyEvent)="togglePrivacyPolicy()" (toggleNavigationEvent)="toggleNavigation()"></app-header>
+    <app-navigation *ngIf="showNavigation" (closeEvent)="toggleNavigation()"></app-navigation>
     <app-coding-home></app-coding-home>
     <app-about-me></app-about-me>
     <app-my-skills></app-my-skills>

@@ -7,22 +7,27 @@
     font-weight: 800;
     font-size: larger;
 
-    img {
-        width: auto;
-        height: 40px;
-        margin-left: 32px;
-    }
-
     @media (max-width:1440px) {
         width: 100vw;
     }
 }
 
+.logo {
+        width: auto;
+        height: 40px;
+        margin-left: 32px;
+        padding-left: 32px;
+    
+}
+
 .burger-frame {
-    position: relative;
-    width: 80px;
-    background-color: none;
+    margin-right: 32px;
     cursor: pointer;
+
+    img {
+        max-width: 32px;
+        height: auto;
+    }
 }
 
 .burger-menu {

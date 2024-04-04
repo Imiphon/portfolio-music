@@ -10,6 +10,7 @@ import { PrivacyPolicyComponent } from "./../privacy-policy/privacy-policy.compo
 import { MatDialog } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { LegalNoticeComponent } from '../legal-notice/legal-notice.component';
+import { NavigationComponent } from '../navigation/navigation.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -25,6 +26,7 @@ import { LegalNoticeComponent } from '../legal-notice/legal-notice.component';
     PrivacyPolicyComponent,
     LegalNoticeComponent,
     CommonModule,
+    NavigationComponent
   ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
@@ -32,15 +34,19 @@ import { LegalNoticeComponent } from '../legal-notice/legal-notice.component';
 export class LandingPageComponent {
   constructor(public dialog: MatDialog) { }
 
+  showNavigation: boolean = false;
   showPrivacyPolicy: boolean = false;
   showLegalNotice: boolean = false;
+
+  toggleNavigation(): void {
+    this.showNavigation = !this.showNavigation;    
+  }
 
   togglePrivacyPolicy(): void {
     this.showPrivacyPolicy = !this.showPrivacyPolicy;    
   }
 
   toggleLegalNotice(): void {
-    this.showLegalNotice = !this.showLegalNotice;
-    
+    this.showLegalNotice = !this.showLegalNotice;    
   }
 }

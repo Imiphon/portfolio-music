@@ -1,26 +1,23 @@
+
 import { Component, EventEmitter, Output } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatMenuModule } from '@angular/material/menu';
+import { CommonModule } from '@angular/common';
 import { PrivacyPolicyComponent } from "./../privacy-policy/privacy-policy.component";
 import { LanguageService } from "./../language.service";
-import { NavigationComponent } from '../navigation/navigation.component';
+import { LegalNoticeComponent } from '../legal-notice/legal-notice.component';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-navigation',
   standalone: true,
   imports: [
-    MatIconModule,
-    MatSidenavModule,
-    MatMenuModule,
+    CommonModule,
     PrivacyPolicyComponent,
-    NavigationComponent
-  ],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
-})
-export class HeaderComponent {
+    LegalNoticeComponent,
 
+  ],
+  templateUrl: './navigation.component.html',
+  styleUrl: './navigation.component.scss'
+})
+export class NavigationComponent {
   constructor(private languageService: LanguageService) {
   }
 
@@ -33,16 +30,19 @@ export class HeaderComponent {
     this.languageService.changeLanguage(lang);
   }
 
-  @Output() toggleNavigationEvent = new EventEmitter<void>();
-  
-  toggleNavigation(): void {
-    this.toggleNavigationEvent.emit();
-  }
-
   @Output() togglePrivacyPolicyEvent = new EventEmitter<void>();
   togglePrivacyPolicy(): void {
     this.togglePrivacyPolicyEvent.emit();
   }
 
+  @Output() toggleLegalNoticeEvent = new EventEmitter<void>();  
+  toggleLegalNotice(): void {
+    this.toggleLegalNoticeEvent.emit();
+    console.log('toggleLegalNotice starts');
+  }
 
+  @Output() closeEvent = new EventEmitter<void>();
+  close(): void {
+    this.closeEvent.emit();
+  }
 }
