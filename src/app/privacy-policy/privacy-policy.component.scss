@@ -23,30 +23,18 @@
     }
 }
 
-button {
-    top: 2px;
-    right: 2px;
-    border: none;
-    background-color: unset;
-    opacity: 0.8;
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.1);
-    }
-    @media (max-width: 540px) {
-        img {
-            width: 60%;
-            height: auto;
-        }
-    }
-}
-
 .close {
     @include dFlex($ai: flex-end);
     width: 100%;
     height: auto;
     position: relative;
 }
+
+button {
+    @include closeBtn();
+}
+
+
 
 .text {
     position: relative;

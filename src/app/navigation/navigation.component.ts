@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PrivacyPolicyComponent } from "./../privacy-policy/privacy-policy.component";
 import { LanguageService } from "./../language.service";
 import { LegalNoticeComponent } from '../legal-notice/legal-notice.component';
+import { ToggleService } from '../toggle.service';
 
 @Component({
   selector: 'app-navigation',
@@ -18,7 +19,7 @@ import { LegalNoticeComponent } from '../legal-notice/legal-notice.component';
   styleUrl: './navigation.component.scss'
 })
 export class NavigationComponent {
-  constructor(private languageService: LanguageService) {
+  constructor(private languageService: LanguageService, private toggleService: ToggleService) {
   }
 
   /**
@@ -30,15 +31,13 @@ export class NavigationComponent {
     this.languageService.changeLanguage(lang);
   }
 
-  @Output() togglePrivacyPolicyEvent = new EventEmitter<void>();
   togglePrivacyPolicy(): void {
-    this.togglePrivacyPolicyEvent.emit();
+    this.toggleService.togglePrivacyPolicy();
+    this.close();
   }
 
-  @Output() toggleLegalNoticeEvent = new EventEmitter<void>();  
   toggleLegalNotice(): void {
-    this.toggleLegalNoticeEvent.emit();
-    console.log('toggleLegalNotice starts');
+    this.toggleService.toggleLegalNotice();
   }
 
   @Output() closeEvent = new EventEmitter<void>();

@@ -74,3 +74,19 @@ span {
     transform: scale(1.05);
     cursor: pointer;
   }
+
+  @mixin closeBtn(){
+    top: 2px;
+    right: 2px;
+    border: none;
+    background-color: unset;
+    opacity: 0.8;
+    img {
+        width: 32px ;
+        height: auto;
+    }
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+  }

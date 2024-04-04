@@ -11,6 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';
 import { LegalNoticeComponent } from '../legal-notice/legal-notice.component';
 import { NavigationComponent } from '../navigation/navigation.component';
+import { ToggleService } from '../toggle.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -32,15 +33,12 @@ import { NavigationComponent } from '../navigation/navigation.component';
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private toggleService: ToggleService) { }
 
   showNavigation: boolean = false;
   showPrivacyPolicy: boolean = false;
   showLegalNotice: boolean = false;
 
-  toggleNavigation(): void {
-    this.showNavigation = !this.showNavigation;    
-  }
 
   togglePrivacyPolicy(): void {
     this.showPrivacyPolicy = !this.showPrivacyPolicy;    
@@ -48,5 +46,20 @@ export class LandingPageComponent {
 
   toggleLegalNotice(): void {
     this.showLegalNotice = !this.showLegalNotice;    
+  }
+
+  ngOnInit() {
+    this.toggleService.onTogglePrivacyPolicy().subscribe(() => {
+      this.showPrivacyPolicy = !this.showPrivacyPolicy;
+    });
+
+    this.toggleService.onToggleLegalNotice().subscribe(() => {
+      this.showLegalNotice = !this.showLegalNotice;
+    });
+
+  }
+
+  toggleNavigation() {
+    this.showNavigation = !this.showNavigation;
   }
 }

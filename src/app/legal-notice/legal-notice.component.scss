@@ -24,21 +24,7 @@
 }
 
 button {
-    top: 2px;
-    right: 2px;
-    border: none;
-    background-color: unset;
-    opacity: 0.8;
-    &:hover {
-        cursor: pointer;
-        transform: scale(1.1);
-    }
-    @media (max-width: 540px) {
-        img {
-            width: 60%;
-            height: auto;
-        }
-    }
+    @include closeBtn();
 }
 
 .close {
