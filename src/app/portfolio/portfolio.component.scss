@@ -1,6 +1,7 @@
 @import './../../styles.scss';
 
 .portfolio-frame {
+    scroll-margin-top: 80px;
     @include dFlex();
     max-width: 100%;
     width: 88vw;

@@ -5,18 +5,21 @@
     top: 120px;
     width: 1440px;
     max-width: 1440px;
-    height: 840px;
+    height: 880px;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-
+    scroll-margin-top: 80px;
     @media (max-width:1440px) {
-        top: 2vw;
+        top: 80px;
         width: 100vw;
+        height: 80vw;
     }
-
-    @media (max-width: 1140px) {
-        height: auto;
+    @media (max-width:800px) {
+        height: 90vw;
+    }
+    @media (max-width:540px) {
+        height: 540px;
     }
 }
 
@@ -80,7 +83,7 @@
 .brand-arrow-frame {
     @include dFlex($jc: space-between, $fd: row);
     width: 92%;
-
+    height: 100vh;
     div {
         max-height: min-content;
     }
@@ -115,9 +118,27 @@
     cursor: pointer;
 }
 
+.arrow-down {
+    @include dFlex();
+    position: relative;
+    height: 100px;
+}
+
 .arrow-down img {
     @media (max-width:375px) {
         width: auto;
         height: 128px;
+    }
+    position: absolute;
+    animation: moveDown 5s linear infinite;
+}
+
+
+@keyframes moveDown {
+    0% {
+        top: -100%; 
+    }
+    100% {
+        top: 100%; 
     }
 }

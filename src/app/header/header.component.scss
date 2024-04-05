@@ -1,5 +1,6 @@
 @import './../../styles.scss';
 
+
 .header-frame {
     position: fixed;
     top: 0;
@@ -8,19 +9,17 @@
     width: 100%;
     @include dFlex();
     z-index: 10;
+    
 }
 
 .header-cont {
-    @include dFlex($jc: space-between, $fd: row);
-
+    @include dFlex($jc: space-between, $fd: row);    
     background-color: #FFFCF3;
     width: 100%;
     max-width: 1440px;
     height: 80px;
     font-weight: 800;
-    font-size: larger;
-    
-
+    font-size: larger;        
     @media (max-width:1440px) {
         width: 100vw;
     }
@@ -31,7 +30,6 @@
     height: 40px;
     margin-left: 32px;
     padding-left: 32px;
-
 }
 
 .burger-frame {

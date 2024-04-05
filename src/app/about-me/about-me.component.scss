@@ -6,7 +6,7 @@
     max-width: 100% !important;
     min-height: 448px;
     height: fit-content;
-
+    scroll-margin-top: 80px;
     @media (max-width:375px) {
         flex-direction: column;
         margin: 10px;
