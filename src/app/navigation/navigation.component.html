@@ -1,44 +1,47 @@
 <div class="nav-frame">
-    <div class="nav-head">
-        <div><img class="logo" src="assets/images/favicon.png" alt=""></div>
-        <div class="links">
-            <div class="lang" (click)="changeLang('en'); close()">english</div>
-            <div class="lang" (click)="changeLang('de'); close()">deutsch</div>
-            <div class="lang" (click)="changeLang('fr'); close()">français</div>
+    <div class="in-nav-frame">
+        <div class="nav-head">
+            <div><img class="logo" src="assets/images/favicon.png" alt=""></div>
+            <div class="links">
+                <div class="lang" (click)="changeLang('en'); close()">english</div>
+                <div class="lang" (click)="changeLang('de'); close()">deutsch</div>
+                <div class="lang" (click)="changeLang('fr'); close()">français</div>
+            </div>
+            <div class="close">
+                <button (click)="close()">
+                    <img src="assets/icons/x-mark-48.png" alt="close">
+                </button>
+            </div>
         </div>
-        <div class="close">
-            <button (click)="close()">
-                <img src="assets/icons/x-mark-48.png" alt="close">
-            </button>
-        </div>
-    </div>
-
-    <div class="bottom">
-        <div class="nav-cont">
-            <div class="hover">
-                <div (click)="close()"><a href="#home">home</a></div>
-                <div class="line-ani" id="lineAni"></div>
+    
+        <div class="bottom">
+            <div class="nav-cont">
+                <div class="hover">
+                    <div (click)="close()"><a href="#home">home</a></div>
+                    <div class="line-ani" id="lineAni"></div>
+                </div>
+                <div class="hover">
+                    <div (click)="close()"><a href="#aboutMe">about me</a></div>
+                    <div class="line-ani" id="lineAni"></div>
+                </div>
+                <div class="hover">
+                    <div (click)="close()"><a href="#mySkills">My Skills</a></div>
+                    <div class="line-ani" id="lineAni"></div>
+                </div>
+                <div class="hover">
+                    <div (click)="close()"><a href="#portfolio">Portfolio</a></div>
+                    <div class="line-ani" id="lineAni"></div>
+                </div>
+                <div class="hover">
+                    <div (click)="close()"><a href="#contactFrame">contact</a></div>
+                    <div class="line-ani" id="lineAni"></div>
+                </div>
+                <div class="hover">
+                    <div class="priv-div" (click)="togglePrivacyPolicy()">privacy policy</div>
+                    <div class="line-ani" id="lineAni"></div>
+                </div>
             </div>
-            <div class="hover">
-                <div (click)="close()"><a href="#aboutMe">about me</a></div>
-                <div class="line-ani" id="lineAni"></div>
-            </div>
-            <div class="hover">
-                <div (click)="close()"><a href="#mySkills">My Skills</a></div>
-                <div class="line-ani" id="lineAni"></div>
-            </div>
-            <div class="hover">
-                <div (click)="close()"><a href="#portfolio">Portfolio</a></div>
-                <div class="line-ani" id="lineAni"></div>
-            </div>
-            <div class="hover">
-                <div (click)="close()"><a href="#contactFrame">contact</a></div>
-                <div class="line-ani" id="lineAni"></div>
-            </div>
-            <div class="hover">
-                <div (click)="togglePrivacyPolicy()">privacy policy</div>
-                <div class="line-ani" id="lineAni"></div>
-            </div>
+            
         </div>
         <div class="triangle"> </div>
     </div>
