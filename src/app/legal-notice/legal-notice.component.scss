@@ -2,6 +2,7 @@
 
 .legal-note-frame {
     @include dFlex();
+    scroll-margin-top: 80px;
     position: fixed;
     top: 0;
     left: 0;
@@ -13,7 +14,7 @@
 
 .legal-notice {
     width: 70%;
-    max-height: 80vh;
+    height:fit-content;
     padding: 60px;
     background-color: white;
     border-radius: 10px;

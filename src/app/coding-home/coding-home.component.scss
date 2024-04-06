@@ -1,11 +1,11 @@
 @import './../../styles.scss';
 
-.headline-frame {
+.home-frame {
     position: relative;
     top: 120px;
     width: 1440px;
     max-width: 1440px;
-    height: 880px;
+    height: 100vh; //880px;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -13,14 +13,18 @@
     @media (max-width:1440px) {
         top: 80px;
         width: 100vw;
-        height: 80vw;
+        height: 100vh; //68vw;
     }
     @media (max-width:800px) {
-        height: 90vw;
+        height: 80vw;
     }
     @media (max-width:540px) {
         height: 540px;
     }
+}
+
+.headline-outside {
+    height: 100vh
 }
 
 .in-head-frame {
@@ -88,9 +92,6 @@
         max-height: min-content;
     }
 
-    @media (max-width:1140px) {
-        margin-top: 10%;
-    }
 }
 
 .brand {
@@ -120,14 +121,14 @@
 .blank {
     width: 100%;
     height: 148px;
-    z-index: 2;
+    z-index: 4;
     background-color: #FFFCF3;
 }
 
 .text {
     width: 60px;
     height: 100px;
-    z-index: 20;
+    z-index: 4;
     background-color: #FFFCF3;
     text-align: center;
 }
@@ -143,7 +144,10 @@
         width: auto;
         height: 128px;
     }
-    position: absolute;
+    position: relative;
+    top: 0; /* Anpassen Sie die Positionierung entsprechend */
+    left: 0; /* Anpassen Sie die Positionierung entsprechend */
+    transform: translateY(10%); /* Startposition der Animation */
     animation: moveDown 4s linear infinite;
 }
 
@@ -153,6 +157,6 @@
         top: -200%; 
     }
     100% {
-        top: 24%; 
+        top: 40%; 
     }
 }

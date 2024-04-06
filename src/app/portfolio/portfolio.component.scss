@@ -145,8 +145,26 @@
     }
 }
 
-.right-arrow {
+.arrow-left-down {
     position: relative;
     top: 32px;
-    width: 60px;
+
+    @media (max-width:375px) {
+        margin-bottom: 32px;
+    }
+    &:hover {
+        animation: upAndDown 1s infinite forwards;
+    }
+}
+
+@keyframes upAndDown {
+0% {
+    transform: translateY(0) translateX(0);
+}
+50% {
+    transform: translateY(-32px) translateX(32px);
+}
+100% {
+    transform: translateY(0) translateX(0);
+}
 }

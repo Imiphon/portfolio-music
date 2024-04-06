@@ -68,10 +68,8 @@ button {
     }
 }
 
-.bottom {
-    @include subTitle();
-    height: 100%;
-    text-align: left;
+.bottom {    
+    height: 100%;    
     gap: 8px;
     line-height: 8.4vw;
 
@@ -79,11 +77,7 @@ button {
         text-decoration: none;
         color: black;
         margin: 0;
-    }
-
-    &:hover {
-        cursor: pointer;
-    }
+    } 
 
     @media (min-width: 1140px) {
         font-size: 60px;
@@ -97,43 +91,35 @@ button {
 }
 
 .hover {
+    @include subTitle();
     position: relative; 
-    &:hover .line-ani::after {
-        width: 100%; 
-        left: 0; 
-        animation: movin-border 0.5s linear forwards; 
+    text-align: left;
+    &:hover a {
+        @include colorChange();
     }
+}
+.hover:hover .line-ani {    cursor: pointer;
+    width: calc(100% + 4px); /* Fügt die zusätzliche Breite des border-left hinzu */
+    animation: movin-border 0.5s linear forwards;
+    
 }
 
 .line-ani {
     height: 32px;
-    width: 100%;
+    width: 32px;
+    border-bottom: 4px solid black;
     border-left: 4px solid black;
-    position: relative; 
-    left: -4px; 
-    @media (max-width:1000px) {
-        height: 4vw;
-        left: -12px;
-    }
-}
-
-.line-ani::after {
-    content: '';
-    position: absolute;
-    bottom: 0; 
-    left: -4px; 
-    height: 4px; 
-    width: 0; 
-    background-color: black; 
+    position: relative;
+    left: -4px;
+    transition: width 0.5s linear; /* Fügt eine Übergangseigenschaft hinzu, um die Animation sanfter zu machen */
 }
 
 @keyframes movin-border {
     0% {
-        border-left: none;
-        width: 0; 
+        width: 32px; /* Startbreite */
     }
     100% {
-        width: 100%; 
+        width: calc(100% + 4px); /* Endbreite inklusive der zusätzlichen Breite des border-left */
     }
 }
 

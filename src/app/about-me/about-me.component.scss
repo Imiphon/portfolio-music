@@ -46,6 +46,7 @@
     padding: 12px 1em 12px 1em !important;
     text-decoration: none;
     color: black;
+    z-index: 5;
 }
 
 .a2-frame {
@@ -161,15 +162,6 @@
     width: 50%;
 }
 
-.arrow-left-down {
-    position: relative;
-    top: 32px;
-
-    @media (max-width:375px) {
-        margin-bottom: 32px;
-    }
-}
-
 .portrait {
     @include dFlex();
     position: relative !important;
@@ -180,18 +172,48 @@
 
     @media (max-width:375px) {
         width: 100%;
+    }    
+}
+
+.img-portrait {
+    width: 30vw;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+    z-index: 5;
+    @media (max-width:375px) {
+        width: 80vw;
+    }    
+}
+
+.arrow-left-down {
+    position: relative;
+    top: 32px;
+
+    @media (max-width:375px) {
+        margin-bottom: 32px;
     }
 
-    img {
-        width: 30vw;
-        max-width: 300px;
-        height: auto;
-        border-radius: 5px;
-
-        @media (max-width:375px) {
-            width: 80vw;
-        }
+    &:hover {
+        animation: upAndDown 1s infinite forwards;
     }
+}
+
+@keyframes upAndDown {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-32px) translateX(32px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+#a3 {
+    @include dFlex();
+    width: 100%;
 }
 
 .text-overlay {

@@ -49,9 +49,11 @@
         width: 9vw;
         height: 9vw;
         margin: 25px;
+
         @media (max-width:1160px) {
             margin: 4%;
         }
+
         @media (max-width:450px) {
             width: 52px;
             height: 52px;
@@ -59,6 +61,7 @@
 
         &:hover {
             cursor: pointer;
+            animation: spin 2s cubic-bezier(0.42, 0, 0.58, 1) forwards;
         }
     }
 }
@@ -90,6 +93,24 @@
     @media (max-width:375px) {
         left: 0;
     }
+
+    &:hover {
+        animation: upAndDown 1s infinite forwards;
+    }
+}
+
+@keyframes upAndDown {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-32px) translateX(-32px);
+    }
+
+    100% {
+        transform: translateY(0) translateX(0);
+    }
 }
 
 .popup {
@@ -112,5 +133,19 @@
     50% {
         transform: translate(-50%, -50%) translateY(-500px);
         opacity: 0;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
     }
 }

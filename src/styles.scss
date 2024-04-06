@@ -52,6 +52,14 @@ span {
         text-align: center;
         padding: 0;
     }
+    @include colorChange();
+}
+
+@mixin colorChange(){
+    transition: color 0.7s ;
+    &:hover{
+        color: #FF9900;
+    }
 }
 
 @mixin dFlex($jc: center, $ai: center, $fd: column, $dp: flex) {
