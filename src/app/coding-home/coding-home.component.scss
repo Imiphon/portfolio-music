@@ -42,6 +42,9 @@
     line-height: 8.89vw;
     letter-spacing: -2.5%;
     text-align: center;
+    &:hover {
+        @include colorChange();
+    }
 
     @media (max-width:1440px) {
         height: fit-content;
@@ -145,12 +148,20 @@
         height: 128px;
     }
     position: relative;
-    top: 0; /* Anpassen Sie die Positionierung entsprechend */
-    left: 0; /* Anpassen Sie die Positionierung entsprechend */
-    transform: translateY(10%); /* Startposition der Animation */
+    top: 0; 
+    left: 0; 
+    transform: translateY(10%); /* start position */   
+    animation: moveDown 4s linear infinite; 
+}
+
+.move {
     animation: moveDown 4s linear infinite;
 }
 
+.no-move {
+    top: -64px;
+    animation: none;
+}
 
 @keyframes moveDown {
     0% {

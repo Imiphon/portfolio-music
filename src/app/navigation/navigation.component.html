@@ -3,9 +3,9 @@
         <div class="nav-head">
             <div><img class="logo" src="assets/images/favicon.png" alt=""></div>
             <div class="links">
-                <div class="lang" (click)="changeLang('en'); close()">english</div>
-                <div class="lang" (click)="changeLang('de'); close()">deutsch</div>
-                <div class="lang" (click)="changeLang('fr'); close()">français</div>
+                <div class="lang" (click)="changeLang('en')">english</div>
+                <div class="lang" (click)="changeLang('de')">deutsch</div>
+                <div class="lang" (click)="changeLang('fr')">français</div>
             </div>
             <div class="close">
                 <button (click)="close()">
@@ -16,28 +16,28 @@
     
         <div class="bottom">
             <div class="nav-cont">
-                <div class="hover">
-                    <div (click)="close()"><a href="#home">home</a></div>
+                <div class="link-frame">
+                    <div (click)="close()"><a class="font" href="#home">home</a></div>
                     <div class="line-ani" id="lineAni"></div>
                 </div>
-                <div class="hover">
-                    <div (click)="close()"><a href="#aboutMe">about me</a></div>
+                <div class="link-frame">
+                    <div (click)="close()"><a class="font" href="#aboutMe">about me</a><img class="flagImg" [src]="currentFlag === 'fr' ? fr : currentFlag === 'de' ? de : en" alt="Flag Image"></div>
                     <div class="line-ani" id="lineAni"></div>
                 </div>
-                <div class="hover">
-                    <div (click)="close()"><a href="#mySkills">My Skills</a></div>
+                <div class="link-frame">
+                    <div (click)="close()"><a class="font" href="#mySkills">my skills</a></div>
                     <div class="line-ani" id="lineAni"></div>
                 </div>
-                <div class="hover">
-                    <div (click)="close()"><a href="#portfolio">Portfolio</a></div>
+                <div class="link-frame">
+                    <div (click)="close()"><a class="font" href="#portfolio">portfolio</a></div>
                     <div class="line-ani" id="lineAni"></div>
                 </div>
-                <div class="hover">
-                    <div (click)="close()"><a href="#contactFrame">contact</a></div>
+                <div class="link-frame">
+                    <div (click)="close()"><a class="font" href="#contactFrame">contact</a><img class="flagImg" [src]="currentFlag === 'fr' ? fr : currentFlag === 'de' ? de : en" alt="Flag Image"></div>
                     <div class="line-ani" id="lineAni"></div>
                 </div>
-                <div class="hover">
-                    <div class="priv-div" (click)="togglePrivacyPolicy()">privacy policy</div>
+                <div class="link-frame">
+                    <div class="font" (click)="togglePrivacyPolicy()">privacy policy<img class="flagImg" [src]="currentFlag === 'fr' ? fr : currentFlag === 'de' ? de : en" alt="Flag Image"></div>
                     <div class="line-ani" id="lineAni"></div>
                 </div>
             </div>

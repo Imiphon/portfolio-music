@@ -4,13 +4,15 @@
     @include dFlex($jc: flex-start, $ai: center);
     margin: 0 3vw;
     max-width: 100% !important;
-    min-height: 448px;
-    height: fit-content;
+    
+    height: 100vh;
     scroll-margin-top: 80px;
+    @media (max-width:900px) {
+        height: fit-content;
+    }
     @media (max-width:375px) {
         flex-direction: column;
         margin: 10px;
-        min-height: fit-content;
     }
 }
 
@@ -89,6 +91,7 @@
 }
 
 #zoom-text {
+
     opacity: 0.8;
     width: 24px;
     padding-right: 32px;
@@ -150,10 +153,6 @@
     @media (max-width:650px) {
         font-size: 10.4px;
         line-height: 12.5px;
-
-    @media (max-height: 600px) {       
-        max-height: 200px;
-    }
     }
 }
 
@@ -167,8 +166,6 @@
     position: relative !important;
     top: 2px;
     width: 50%;
-    //height: auto;
-
 
     @media (max-width:375px) {
         width: 100%;
@@ -230,13 +227,19 @@
 }
 
 .overlay-content {
-    @include dFlex($ai: end, );
-    height: 90%;
+    @include dFlex($ai: end, );    
+    position: fixed;
+    top: 96px;
+    bottom: 32px;
     width: 80%;
     background-color: white;
     padding: 20px;
     border-radius: 5px;
+    overflow: auto;
 
+    @media (max-width:420px) {
+        justify-content: start;
+    }
     button {
         position: relative;
         top: 2px;
@@ -249,10 +252,11 @@
             transform: scale(1.1);
         }
 
-        @media (max-width: 540px) {
+        @media (max-width: 540px) {            
             img {
-                width: 32px;
+                width: 24px;
                 height: auto;
+                
             }
         }
     }

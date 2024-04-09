@@ -4,6 +4,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { LanguageService } from "./../language.service";
 import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.component';
+import { MatSnackBar, MatSnackBarConfig } from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +12,7 @@ import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.compone
   imports: [
     FormsModule,
     CommonModule,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
@@ -19,12 +20,19 @@ import { PrivacyPolicyComponent } from '../privacy-policy/privacy-policy.compone
 export class ContactComponent implements OnInit {
   contactOrange: string = '';
   contactHello: string = '';
-  constructor(private http: HttpClient, private languageService: LanguageService) { }
+  constructor(private http: HttpClient, private languageService: LanguageService, private _snackBar: MatSnackBar ) { }
 
   ngOnInit(): void {
     this.languageService.getCurrentLanguage().subscribe(lang => {
       this.onLanguageChange(lang);
     })
+  }
+
+  openSnackBar(message: string): void {
+    const config = new MatSnackBarConfig();
+    config.panelClass = ['black-snackbar']; 
+    config.duration = 3000;   
+    this._snackBar.open(message, 'Close', config );
   }
 
   onLanguageChange(lang: string): void {
@@ -59,7 +67,6 @@ export class ContactComponent implements OnInit {
 
   //to get a reaction if user didn't touch one of the inputs
   private allTouched(ngForm: NgForm) {
-    console.log('allTouched starts');
     Object.values(ngForm.controls).forEach(control => {
       control.markAsTouched();
     });
@@ -73,14 +80,14 @@ export class ContactComponent implements OnInit {
     });
 
     this.allTouched(ngForm);
-    if (ngForm && ngForm.submitted && !this.mailTest) {
-      console.log('Form data:', this.contactData);
+    if (ngForm.valid && this.contactData.privacy&& !this.mailTest) {
 
       //conversion to JSON works automaticly with HTTPClient, so I take directly contactData
       this.http.post(this.post.endPoint, this.contactData, { headers, responseType: 'text' })
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
+            this.openSnackBar('Message has been sent.');
           },
           error: (error) => {
             console.error(error);
@@ -92,6 +99,7 @@ export class ContactComponent implements OnInit {
       ngForm.resetForm();
       this.allTouched(ngForm);
       console.log('mailTest works!');
+      this.openSnackBar('Message has been sent.');
     }
   }
 

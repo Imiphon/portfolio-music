@@ -16,6 +16,7 @@ export class PortfolioComponent implements OnInit {
   portfolioJoin: string = '';
   portfolioPollo: string = '';
   portfolioPokemon: string = '';
+  showColored: boolean = false;
   constructor(private languageService: LanguageService, private http: HttpClient) { }
 
   ngOnInit(): void {

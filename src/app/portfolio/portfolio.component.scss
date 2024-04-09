@@ -76,6 +76,21 @@
     }
 }
 
+.colored {
+    display: none;
+}
+.pic-change {
+&:hover{
+.uncolored {
+    display: none;
+}
+.colored {
+    display: inline;
+}
+}
+}
+
+
 .count-right {
     align-items: end !important;
 }
