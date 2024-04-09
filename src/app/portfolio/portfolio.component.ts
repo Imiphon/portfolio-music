@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LanguageService } from "./../language.service";
 import { CommonModule } from '@angular/common';
+import { IosCheckerService } from "./../ios-checker.service";
 
 @Component({
   selector: 'app-portfolio',
@@ -17,8 +18,11 @@ export class PortfolioComponent implements OnInit {
   portfolioPollo: string = '';
   portfolioPokemon: string = '';
   showColored: boolean = false;
-  constructor(private languageService: LanguageService, private http: HttpClient) { }
-
+  isIOS:boolean = false; 
+  constructor(private languageService: LanguageService, private http: HttpClient, private iosChecker: IosCheckerService) {
+    this.isIOS = this.iosChecker.isUserIOS();
+   }
+   
   ngOnInit(): void {
     this.languageService.getCurrentLanguage().subscribe(lang => {
       this.onLanguageChange(lang);

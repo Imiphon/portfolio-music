@@ -23,9 +23,10 @@
     margin-top: 23px;
     margin-bottom: 80px;
     width: min-content; //525px;
+
     p {
-        margin: 12px 0!important;
-       }
+        margin: 12px 0 !important;
+    }
 }
 
 .examples-frame {
@@ -36,6 +37,7 @@
 }
 
 .img-text-frame {
+    position: relative;
     @include dFlex($fd: row, $jc: space-between);
     width: 90%;
     margin-bottom: 64px;
@@ -46,17 +48,18 @@
 
     img {
         width: 100%;
-        height: auto; 
+        height: auto;
     }
 
     .count,
     .count-right {
         @include dFlex($jc: flex-start, $ai: start);
-        max-height: 32vw; 
+        max-height: 32vw;
         font-size: 48px;
+
         p {
             margin: 12px 0 !important;
-           }
+        }
     }
 
     @media (max-width:740px) {
@@ -79,17 +82,83 @@
 .colored {
     display: none;
 }
+
 .pic-change {
-&:hover{
-.uncolored {
-    display: none;
-}
-.colored {
-    display: inline;
-}
-}
+    &:hover {
+        .uncolored {
+            display: none;
+        }
+
+        .colored {
+            display: inline;
+        }
+
+        .rectangle-r {
+            border-color: black;
+        }
+
+        .arrow-r {
+            color: white;
+            animation: 0.3s turnArrowR ease-in-out;
+        }
+    }
 }
 
+@keyframes turnArrowR {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.ios {
+    .colored {
+        display: none !important;
+    }
+
+    .uncolored {
+        display: block !important;
+    }
+}
+
+.rec-frame {
+    position: relative;
+}
+
+.rectangle-r {
+    border: 2px solid transparent;
+    position: absolute;
+    z-index: 10;
+    pointer-events: none; //no cursor-reaction
+    transition: all 0.3s ease;
+    top: 8px;
+    left: 8px;
+    height: 100%;
+    width: 100%;
+}
+
+.dot {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-color: black;
+    border-radius: 50%;
+    /* Runder Punkt */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 1s linear;
+    @include dFlex();
+}
+
+.arrow-r {
+    display: absolute;
+    width: 70% !important;
+    transform: rotate(0deg);
+}
 
 .count-right {
     align-items: end !important;
@@ -102,6 +171,7 @@
 .desc-r {
     margin: 12px 0 0 32px;
     text-align: right;
+
     @media (max-width:740px) {
         text-align: left;
         margin: 12px 0;
@@ -167,19 +237,22 @@
     @media (max-width:375px) {
         margin-bottom: 32px;
     }
+
     &:hover {
         animation: upAndDown 1s infinite forwards;
     }
 }
 
 @keyframes upAndDown {
-0% {
-    transform: translateY(0) translateX(0);
-}
-50% {
-    transform: translateY(-32px) translateX(32px);
-}
-100% {
-    transform: translateY(0) translateX(0);
-}
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-32px) translateX(32px);
+    }
+
+    100% {
+        transform: translateY(0) translateX(0);
+    }
 }

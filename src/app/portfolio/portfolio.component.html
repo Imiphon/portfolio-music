@@ -1,52 +1,72 @@
 <div class="portfolio-frame" id="portfolio">
 
-<div class="subtext-frame">
-    <div class="sub-title">
-        Portfolio
-    </div>
-    <div class="text">
-        <p>Explore a selection of my work here - Interact with projects to see my skills in action.</p>
-    </div>
-</div>
-
-<div class="examples-frame">
-    <div class="img-text-frame right">
-        <a class="pic-change" href="https://www.mensching.online/coding/join/index.html">
-            <img class="colored" src="assets/images/pic-join-col.png" alt="">
-            <img class="uncolored" src="assets/images/pic-join.png" alt="">
-        </a>
-        <div class="count-descript-frame">
-            <div class="count-right"><p><b>01/03</b></p></div>
-            <div class="show-skills"></div>
-            <p class="text desc-r" [innerHTML]="portfolioJoin">A task management application inspired by the Kanban System. Create and organize tasks using drag-and-drop functions, assign users, and categorize tasks.</p>
+    <div class="subtext-frame">
+        <div class="sub-title">
+            Portfolio
+        </div>
+        <div class="text">
+            <p>Explore a selection of my work here - Interact with projects to see my skills in action.</p>
         </div>
     </div>
 
-    <div class="img-text-frame left">
-        <div class="count-descript-frame">
-            <div class="count"><p><b>02/03</b></p></div>
-            <p class="text desc-l" [innerHTML]="portfolioPollo">A jump-and-run game based on an object-oriented approach. You have to find Tabasco bottles to hit chickens. For iOS, I reduced the sound for better performance.</p>
+    <div class="examples-frame">
+        <div class="img-text-frame right">
+            <a [class.pic-change]="!isIOS" [class.ios]="isIOS"
+                href="https://www.mensching.online/coding/join/index.html">
+                <div class="rec-frame">
+                    <div class="rectangle-r">
+                        <div class="dot">
+                            <img src="assets/icons/arrow-right-32-white.png" alt="" class="arrow-r">
+                        </div>
+                    </div>
+                    <img class="colored" src="assets/images/pic-join-col.png" alt="">
+                    <img class="uncolored" src="assets/images/pic-join.png" alt="">
+                </div>
+            </a>
+            <div class="count-descript-frame">
+                <div class="count-right">
+                    <p><b>01/03</b></p>
+                </div>
+                <div class="show-skills"></div>
+                <p class="text desc-r" [innerHTML]="portfolioJoin">A task management application inspired by the Kanban
+                    System. Create and organize tasks using drag-and-drop functions, assign users, and categorize tasks.
+                </p>
+            </div>
         </div>
-        <a class="pic-change" href="https://www.mensching.online/coding/pollo/index.html">
-            <img class="colored" src="assets/images/pic-pollo-col.png" alt="">
-            <img class="uncolored" src="assets/images/pic-pollo.png" alt="">
-        </a>
-    </div>
 
-    <div class="img-text-frame right">
-        <a class="pic-change" href="https://www.mensching.online/coding/pokemon/index.html">
-            <img class="colored" src="assets/images/pic-pokemon-col.png" alt="">
-            <img class="uncolored" src="assets/images/pic-pokemon.png" alt="">
-        </a>
-        <div class="count-descript-frame">
-            <div class="count-right"><p><b>03/03</b></p></div>
-            <p class="text desc-r" [innerHTML]="portfolioPokemon"></p>
+        <div class="img-text-frame left">
+            <div class="count-descript-frame">
+                <div class="count">
+                    <p><b>02/03</b></p>
+                </div>
+                <p class="text desc-l" [innerHTML]="portfolioPollo">A jump-and-run game based on an object-oriented
+                    approach. You have to find Tabasco bottles to hit chickens. For iOS, I reduced the sound for better
+                    performance.</p>
+            </div>
+            <a [class.pic-change]="!isIOS" [class.ios]="isIOS"
+                href="https://www.mensching.online/coding/pollo/index.html">
+                <img class="colored" src="assets/images/pic-pollo-col.png" alt="">
+                <img class="uncolored" src="assets/images/pic-pollo.png" alt="">
+            </a>
+        </div>
+
+        <div class="img-text-frame right">
+            <a [class.pic-change]="!isIOS" [class.ios]="isIOS"
+                href="https://www.mensching.online/coding/pokemon/index.html">
+                <img class="colored" src="assets/images/pic-pokemon-col.png" alt="">
+                <img class="uncolored" src="assets/images/pic-pokemon.png" alt="">
+            </a>
+            <div class="count-descript-frame">
+                <div class="count-right">
+                    <p><b>03/03</b></p>
+                </div>
+                <p class="text desc-r" [innerHTML]="portfolioPokemon"></p>
+            </div>
         </div>
     </div>
-</div>
-<div class="arrow-frame">
-    <a href="#helloContact">
-        <img class="arrow-left-down" src="assets/icons/arrow-left-pic.png" alt="arrow-left">
-    </a>
-</div>
+    <div class="arrow-frame">
+        <a href="#helloContact">
+            <img class="arrow-left-down" src="assets/icons/arrow-left-pic.png" alt="arrow-left">
+        </a>
+    </div>
 </div>

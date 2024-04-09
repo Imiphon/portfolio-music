@@ -125,6 +125,7 @@
 }
 
 .sub-title {
+    @include colorChange();
     @include subTitle();
     margin-bottom: 24px;
     padding: 10px;

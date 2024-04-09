@@ -15,7 +15,6 @@ export class FooterComponent {
   
   toggleLegalNotice(): void {
     this.toggleLegalNoticeEvent.emit();
-    console.log('toggleLegalNotice starts');
   }
   
   
