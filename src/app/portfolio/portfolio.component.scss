@@ -83,37 +83,6 @@
     display: none;
 }
 
-.pic-change {
-    &:hover {
-        .uncolored {
-            display: none;
-        }
-
-        .colored {
-            display: inline;
-        }
-
-        .rectangle-r {
-            border-color: black;
-        }
-
-        .arrow-r {
-            color: white;
-            animation: 0.3s turnArrowR ease-in-out;
-        }
-    }
-}
-
-@keyframes turnArrowR {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 .ios {
     .colored {
         display: none !important;
@@ -128,7 +97,7 @@
     position: relative;
 }
 
-.rectangle-r {
+.rectangle {
     border: 2px solid transparent;
     position: absolute;
     z-index: 10;
@@ -140,24 +109,63 @@
     width: 100%;
 }
 
+.rect-left {
+    left: -8px !important;
+}
+
 .dot {
     position: absolute;
     width: 32px;
     height: 32px;
-    background-color: black;
+    background-color: transparent; //black;
     border-radius: 50%;
-    /* Runder Punkt */
     top: 50%;
-    left: 50%;
+    left: 100%;
     transform: translate(-50%, -50%);
     transition: transform 1s linear;
     @include dFlex();
+    
+}
+.l {left: 0 !important;}
+
+.arrow {
+    width: 70% !important;
+    visibility: hidden;
 }
 
-.arrow-r {
-    display: absolute;
-    width: 70% !important;
-    transform: rotate(0deg);
+// hover-animation for images
+.pic-change {
+    @media (min-width:1140px) {
+        &:hover {
+            .uncolored {
+                display: none;
+            }        
+            .colored {
+                display: inline;
+            }
+            .dot {
+                background-color: black;
+            }
+            .rectangle {
+                border-color: black;
+            }
+            .arrow {
+                visibility: visible;
+                animation: 0.8s turnArrowR cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            }
+            .desc-l,
+            .desc-r{ opacity: 1;}
+        }
+    }
+}
+
+@keyframes turnArrowR {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .count-right {
@@ -171,7 +179,9 @@
 .desc-r {
     margin: 12px 0 0 32px;
     text-align: right;
-
+    @media (min-width:1140px) {
+        opacity: 0;
+    }
     @media (max-width:740px) {
         text-align: left;
         margin: 12px 0;
@@ -180,6 +190,9 @@
 
 .desc-l {
     margin-top: 12px;
+    @media (min-width:1140px) {
+        opacity: 0;
+    }
 }
 
 
@@ -206,13 +219,12 @@
     height: auto;
     font-size: 23px;
     line-height: 27.6px;
-
     @media (max-width:1440px) {
         font-size: 1.6vw;
         line-height: 1.92vw;
     }
 
-    @media (max-width:650px) {
+    @media (max-width:800px) {
         font-size: 12px;
         line-height: 12.5px;
     }

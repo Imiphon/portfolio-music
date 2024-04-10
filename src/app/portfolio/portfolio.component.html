@@ -9,14 +9,14 @@
         </div>
     </div>
 
-    <div class="examples-frame">
-        <div class="img-text-frame right">
-            <a [class.pic-change]="!isIOS" [class.ios]="isIOS"
+    <div class="examples-frame" >
+        <div class="img-text-frame right" [class.pic-change]="!isIOS" [class.ios]="isIOS">
+            <a 
                 href="https://www.mensching.online/coding/join/index.html">
                 <div class="rec-frame">
-                    <div class="rectangle-r">
-                        <div class="dot">
-                            <img src="assets/icons/arrow-right-32-white.png" alt="" class="arrow-r">
+                    <div class="rectangle">
+                        <div class="dot r">
+                            <img src="assets/icons/arrow-right-32-white.png" alt="" class="arrow">
                         </div>
                     </div>
                     <img class="colored" src="assets/images/pic-join-col.png" alt="">
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <div class="img-text-frame left">
+        <div class="img-text-frame left" [class.pic-change]="!isIOS" [class.ios]="isIOS">
             <div class="count-descript-frame">
                 <div class="count">
                     <p><b>02/03</b></p>
@@ -43,18 +43,32 @@
                     approach. You have to find Tabasco bottles to hit chickens. For iOS, I reduced the sound for better
                     performance.</p>
             </div>
-            <a [class.pic-change]="!isIOS" [class.ios]="isIOS"
+            <a 
                 href="https://www.mensching.online/coding/pollo/index.html">
+                <div class="rec-frame">
+                    <div class="rectangle rect-left">
+                        <div class="dot l">
+                            <img src="assets/icons/arrow-left-32-white.png" alt="" class="arrow">
+                        </div>
+                    </div>
                 <img class="colored" src="assets/images/pic-pollo-col.png" alt="">
                 <img class="uncolored" src="assets/images/pic-pollo.png" alt="">
+            </div>
             </a>
         </div>
 
-        <div class="img-text-frame right">
-            <a [class.pic-change]="!isIOS" [class.ios]="isIOS"
+        <div class="img-text-frame right" [class.pic-change]="!isIOS" [class.ios]="isIOS">
+            <a 
                 href="https://www.mensching.online/coding/pokemon/index.html">
+                <div class="rec-frame">
+                    <div class="rectangle">
+                        <div class="dot r">
+                            <img src="assets/icons/arrow-right-32-white.png" alt="" class="arrow">
+                        </div>
+                    </div>
                 <img class="colored" src="assets/images/pic-pokemon-col.png" alt="">
                 <img class="uncolored" src="assets/images/pic-pokemon.png" alt="">
+            </div>
             </a>
             <div class="count-descript-frame">
                 <div class="count-right">
