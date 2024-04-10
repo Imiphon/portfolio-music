@@ -1,5 +1,5 @@
 <div class="contact-frame" id="contactFrame">
-    <div class="triangle">
+    <div class="triangle" id="helloContact" >
 
     </div>
     <div class="form-frame">
@@ -7,7 +7,7 @@
             <div>Say Hi!</div>
         </div>
         <p class="quest orange" [innerHTML]="contactOrange"></p>
-        <p class="hello" id="helloContact" [innerHTML]="contactHello"></p>
+        <p class="hello" [innerHTML]="contactHello"></p>
 
         <form #contactForm="ngForm" class="contact-form" (ngSubmit)="onSubmit(contactForm)">
             <div>

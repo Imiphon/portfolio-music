@@ -48,14 +48,21 @@
     padding: 12px 1em 12px 1em !important;
     text-decoration: none;
     color: black;
-    z-index: 5;
-}
+    
+    z-index: 5; 
+    &:hover {
+        font-size: larger;
+        font-weight: 700;
+        padding: 12px 2em 12px 2em !important;
+        transition: font-weight 0.5s, padding 0.5s;
+        }   
+    }
 
 .a2-frame {
     @include dFlex();
     //for mobile in top of the subtitle
     margin: 12px 0 12px 0;
-
+    
     @media (max-width:375px) {
         width: 100vw;
     }
@@ -125,12 +132,12 @@
 }
 
 .sub-title {
-    @include colorChange();
+    
     @include subTitle();
     margin-bottom: 24px;
     padding: 10px;
     text-align: left;
-
+    z-index: 2;
     @media (max-width:900px) {
         margin-bottom: 12px;
     }

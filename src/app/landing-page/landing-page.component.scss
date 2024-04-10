@@ -8,7 +8,7 @@
 }
 
 .components-frame {
-    @include dFlex($jc:flex-start);
+    //@include dFlex($jc:flex-start);
     max-width: 1440px;
     background-color: #FFFCF3;
     overflow: hidden;

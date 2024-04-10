@@ -5,27 +5,28 @@
     top: 120px;
     width: 1440px;
     max-width: 1440px;
-    height: 100vh; //880px;
+    height: inherit; //100vh; //880px;
+    min-height: 1000px;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     scroll-margin-top: 80px;
+
     @media (max-width:1440px) {
         top: 80px;
         width: 100vw;
         height: 100vh; //68vw;
     }
+
     @media (max-width:800px) {
-        height: 80vw;
+        height: auto; //80vw;
     }
+
     @media (max-width:540px) {
         height: 540px;
     }
 }
 
-.headline-outside {
-    height: 100vh
-}
 
 .in-head-frame {
     @include dFlex();
@@ -42,6 +43,7 @@
     line-height: 8.89vw;
     letter-spacing: -2.5%;
     text-align: center;
+
     &:hover {
         @include colorChange();
     }
@@ -90,7 +92,9 @@
 .brand-arrow-frame {
     @include dFlex($jc: space-between, $fd: row);
     width: 92%;
-    height: 100vh;
+    height: inherit;
+    padding-bottom: 20px;
+
     div {
         max-height: min-content;
     }
@@ -121,6 +125,7 @@
     color: black;
     cursor: pointer;
 }
+
 .blank {
     width: 100%;
     height: 148px;
@@ -147,11 +152,13 @@
         width: auto;
         height: 128px;
     }
+
     position: relative;
-    top: 0; 
-    left: 0; 
-    transform: translateY(10%); /* start position */   
-    animation: moveDown 4s linear infinite; 
+    top: 0;
+    left: 0;
+    transform: translateY(10%);
+    /* start position */
+    animation: moveDown 4s linear infinite;
 }
 
 .move {
@@ -165,9 +172,10 @@
 
 @keyframes moveDown {
     0% {
-        top: -200%; 
+        top: -200%;
     }
+
     100% {
-        top: 40%; 
+        top: 40%;
     }
 }
