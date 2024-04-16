@@ -165,5 +165,26 @@ input {
     @media (max-width:375px) {
         right: -35%;
         bottom: 0;
+    }    
+}
+
+.arrow-up {
+    &:hover {
+        animation: upAndDown 1s infinite forwards;
+        animation-play-state: running;
+    }
+}
+
+@keyframes upAndDown {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateY(-32px);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }
