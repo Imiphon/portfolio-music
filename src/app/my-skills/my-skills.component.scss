@@ -4,6 +4,7 @@
     @include dFlex();
     scroll-margin-top: 80px;
     width: 100%;
+    max-width: 1440px;
     @media (max-width:1140px) {
         height: fit-content;        
     }

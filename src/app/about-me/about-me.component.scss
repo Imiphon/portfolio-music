@@ -3,7 +3,7 @@
 .about-me-frame {
     @include dFlex($jc: flex-start, $ai: center);
     margin: 0 3vw;
-    max-width: 100% !important;
+    max-width: 1440px;
 
     height: 100vh;
     scroll-margin-top: 80px;
@@ -169,7 +169,7 @@
 
 .img-portrait {
     width: 30vw;
-    max-width: 300px;
+    max-width: 250px;
     height: auto;
     border-radius: 5px;
     z-index: 5;
