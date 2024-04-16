@@ -2,8 +2,7 @@
 
 .footer-frame {
     @include dFlex($fd: row-reverse, $jc: space-between);
-    background-color: black;
-    width: 100vw;
+    width: 100%;
     max-width: 1440px;
 
     @media (max-width: 490px) {
@@ -14,6 +13,8 @@
 
 .footer-legal-combi {
     @include dFlex();
+    background-color: black;
+    width: 100vw;
 }
 
 #xing {
@@ -80,6 +81,7 @@
 
 .legalNote {
     width: 100%;
+    max-width: 1440px;
     background-color: black;
     @include dFlex($ai: end);    
     

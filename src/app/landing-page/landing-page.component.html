@@ -7,10 +7,12 @@
     <app-about-me></app-about-me>
     <app-my-skills></app-my-skills>
     <app-portfolio></app-portfolio>
+    <div class="triangle" id="helloContact" ></div>
     <app-contact (togglePrivacyPolicyEvent)="togglePrivacyPolicy()"></app-contact>
+    <app-footer (toggleLegalNoticeEvent)="toggleLegalNotice()"></app-footer>
     <app-privacy-policy *ngIf="showPrivacyPolicy" (closeEvent)="togglePrivacyPolicy()"></app-privacy-policy>
     <app-legal-notice *ngIf="showLegalNotice" (closeEvent)="toggleLegalNotice()"></app-legal-notice>    
-    <app-footer (toggleLegalNoticeEvent)="toggleLegalNotice()"></app-footer>
+    
 </div>
     
 </div>

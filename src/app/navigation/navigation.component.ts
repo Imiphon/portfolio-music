@@ -37,7 +37,7 @@ export class NavigationComponent {
     localStorage.setItem('language', lang);
 
     // elements wich change language
-    let highlightIds = ['aboutMe', 'contact', 'pp'];
+    let highlightIds = ['aboutMe', 'contact', 'pp', 'portfolio'];
     let isRunning = false;
     highlightIds.forEach(id => {
       const element = document.getElementById(id);
