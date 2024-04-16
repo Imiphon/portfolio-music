@@ -2,11 +2,9 @@
 
 .home-frame {
     position: relative;
-    top: 120px;
-    width: 1440px;
+    width: 100%;
     max-width: 1440px;
-    height: inherit; //100vh; //880px;
-    min-height: 1000px;
+    height: 100vh;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -14,21 +12,18 @@
 
     @media (max-width:1440px) {
         top: 80px;
-        width: 100vw;
+        width: 100%;
         height: 100vh; //68vw;
     }
 
     @media (max-width:800px) {
-        height: auto; //80vw;
-    }
-
-    @media (max-width:540px) {
-        height: 540px;
+        justify-content: center;
     }
 }
 
-
 .in-head-frame {
+    position: relative;
+    top: 120px;
     @include dFlex();
     width: fit-content;
 }
@@ -52,7 +47,7 @@
         height: fit-content;
         font-size: 8.89vw; // 
         line-height: 8.89vw;
-        margin-top: 5%;
+        margin-top: 10%;
     }
 }
 
@@ -99,6 +94,9 @@
         max-height: min-content;
     }
 
+    @media (max-width:800px) {
+        margin-top: 20%;
+    }
 }
 
 .brand {
@@ -157,7 +155,6 @@
     top: 0;
     left: 0;
     transform: translateY(10%);
-    /* start position */
     animation: moveDown 4s linear infinite;
 }
 
@@ -172,10 +169,18 @@
 
 @keyframes moveDown {
     0% {
+        opacity: 0;
         top: -200%;
     }
-
+    2% {
+        opacity: 1;
+        top: -200%;
+    }
+    95% {
+        opacity: 0.8;
+    }
     100% {
+        opacity: 0.3;
         top: 40%;
     }
 }

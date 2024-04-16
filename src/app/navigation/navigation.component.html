@@ -7,6 +7,11 @@
                 <div class="lang" (click)="changeLang('de')">deutsch</div>
                 <div class="lang" (click)="changeLang('fr')">français</div>
             </div>
+            <div class="flags">
+                <div class="flag" (click)="changeLang('en')"><img src="assets/icons/icon-en.png" alt="flag"></div>
+                <div class="flag" (click)="changeLang('de')"><img src="assets/icons/icon-de.png" alt="flag"></div>
+                <div class="flag" (click)="changeLang('fr')"><img src="assets/icons/icon-fr.png" alt="flag"></div>
+            </div>
             <div class="close">
                 <button (click)="close()">
                     <img src="assets/icons/x-mark-48.png" alt="close">
@@ -14,35 +19,32 @@
             </div>
         </div>
     
-        <div class="bottom">
+        <div class="main-cont">
             <div class="nav-cont">
                 <div class="link-frame">
-                    <div (click)="close()"><a class="font" href="#home">home</a></div>
-                    <div class="line-ani" id="lineAni"></div>
+                    <div (click)="close()"><a class="font" href="#aboutMe" id="aboutMe">About me</a></div>
+                    <div class="line-ani"></div>
                 </div>
                 <div class="link-frame">
-                    <div (click)="close()"><a class="font" href="#aboutMe">about me</a><img class="flagImg" [src]="currentFlag === 'fr' ? fr : currentFlag === 'de' ? de : en" alt="Flag Image"></div>
-                    <div class="line-ani" id="lineAni"></div>
+                    <div (click)="close()"><a class="font" href="#mySkills" id="mySkills">My skills</a></div>
+                    <div class="line-ani" ></div>
                 </div>
                 <div class="link-frame">
-                    <div (click)="close()"><a class="font" href="#mySkills">my skills</a></div>
-                    <div class="line-ani" id="lineAni"></div>
+                    <div (click)="close()"><a class="font" href="#portfolio" id="portfolio">Portfolio</a></div>
+                    <div class="line-ani"></div>
                 </div>
                 <div class="link-frame">
-                    <div (click)="close()"><a class="font" href="#portfolio">portfolio</a></div>
-                    <div class="line-ani" id="lineAni"></div>
+                    <div (click)="close()"><a class="font" href="#contactFrame" id="contact">Contact</a></div>
+                    <div class="line-ani"></div>
                 </div>
                 <div class="link-frame">
-                    <div (click)="close()"><a class="font" href="#contactFrame">contact</a><img class="flagImg" [src]="currentFlag === 'fr' ? fr : currentFlag === 'de' ? de : en" alt="Flag Image"></div>
-                    <div class="line-ani" id="lineAni"></div>
-                </div>
-                <div class="link-frame">
-                    <div class="font" (click)="togglePrivacyPolicy()">privacy policy<img class="flagImg" [src]="currentFlag === 'fr' ? fr : currentFlag === 'de' ? de : en" alt="Flag Image"></div>
-                    <div class="line-ani" id="lineAni"></div>
+                    <div class="font" id="pp" (click)="togglePrivacyPolicy()">Privacy policy</div>
+                    <div class="line-ani"></div>
                 </div>
             </div>
             
         </div>
         <div class="triangle"> </div>
+        <div class="triangle-bottom"></div>        
     </div>
 </div>

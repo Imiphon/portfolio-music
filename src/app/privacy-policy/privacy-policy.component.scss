@@ -1,26 +1,24 @@
 @import './../../styles.scss';
 
 .policy-frame {
-    @include dFlex($jc:end);
-    
+    @include dFlex();
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 6;
 }
 
 .privacy-policy {
     position: relative;
-    bottom: 32px;
-    width: 70%;
-    height: 70vh;
-    padding: 60px;
-    background-color: white;
-    border-radius: 10px;
+    width: 80%;
+    height: 60%;
+    max-width: 1440px;
+    background-color: #FFFCF3;
     overflow-y: auto;
+
     @media (max-width: 540px) {
         padding: 16px;
     }
@@ -41,5 +39,6 @@ button {
 
 .text {
     position: relative;
-    height: -webkit-fill-available;
+    padding: 32px;
+    margin-bottom: 32px;
 }

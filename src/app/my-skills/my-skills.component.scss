@@ -124,12 +124,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: black; 
-    background: radial-gradient(circle, white 0%, #FF9900 70%); 
+    background: #FF9900 ;//radial-gradient(circle, white 0%, #FF9900 70%); 
     padding: 20px;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     opacity: 0;
     animation: riseUp 5s ease-out forwards;
+    font-weight: 700;
 }
 
 @keyframes riseUp {

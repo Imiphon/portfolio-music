@@ -15,9 +15,9 @@
 .legal-notice {
     width: 70%;
     height:fit-content;
-    padding: 60px;
-    background-color: white;
-    border-radius: 10px;
+    max-height: 50%;
+    padding: 60px; 
+    background-color: #FFFCF3;
     overflow-y: auto;
     @media (max-width: 540px) {
         padding: 16px;

@@ -9,6 +9,10 @@
     height: 100vh;
     background-color: black;
     z-index: 12;
+
+    @media (max-width:375px) {
+        height: -webkit-fill-available;
+    }
 }
 
 .in-nav-frame {
@@ -17,12 +21,16 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     max-width: 1440px;
-    height: 100vh;
     background-color: #FFFCF3;
+    @media (max-width: 420px) {
+        margin-top: 80px;
+    }
 }
 
 .nav-cont {
+    @include dFlex($jc: space-between);
     @media (max-width: 540px) {
         padding: 16px;
     }
@@ -35,6 +43,7 @@
     width: 100%;
     max-width: 1140px;
     height: 80px;
+    margin-top: 12px;
     @include dFlex($fd: row, $jc: space-between)
 }
 
@@ -66,9 +75,29 @@ button {
     width: 50%;
 
     @media (max-width:420px) {
-        width: 80%;
-        position: relative;
-        top: 52px;
+        display: none;
+    }
+}
+
+.flags {
+    @media (max-width:420px) {
+        @include dFlex($fd: row, $jc: space-between);
+        width: 40%;
+    }
+}
+
+.flag img {
+    display: none;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    @media (max-width:420px) {
+        @include dFlex($fd: row, $jc: space-between);
+        height: 24px;
+        gap: 4px;
     }
 }
 
@@ -79,15 +108,20 @@ button {
     }
 }
 
-.bottom {
-    @include dFlex();
+.main-cont {
+    @include dFlex($jc: flex-start);
     width: 100%;
-    height: 100vh;
+    height: 100%;
     gap: 8px;
     line-height: 8.4vw;
 
-    @media (min-width: 1140px) {
+    @media (min-width: 1440px) {
         position: relative;
+        top: 3%;
+    }
+
+    @media (max-width: 1440px) {
+        justify-content: center !important;
     }
 }
 
@@ -95,17 +129,26 @@ button {
     text-decoration: none;
     color: black;
     margin: 0;
+    text-align: center;
+    position: relative;
+    bottom: -16px;
+    padding-left: 32px;
+
     @media (min-width: 1140px) {
-        font-size: 54px;
         line-height: 80px;
+        font-size: 54px;
     }
 
     @media (max-width:1140px) {
-        margin-left: 4px; 
+        margin-left: 4px;
+        bottom: 0;
+        padding-left: 8px;
     }
+
     @media (max-width:420px) {
         line-height: 0.8;
-        font-size: 16px;    
+        font-size: 24px;
+        white-space: wrap;
     }
 
     &:hover {
@@ -114,10 +157,22 @@ button {
     }
 }
 
-.link-frame {    
+#pp {
+    white-space: no-wrap !important;
+    padding-bottom: 16px;
+
+    @media (max-width:420px) {
+        white-space: wrap !important;
+    }
+}
+
+.link-frame {
     @include subTitle();
-    position: relative;    
-    text-align: left !important;  
+    position: relative;
+    width: 100%;
+    @media (max-width:1440px) {
+        height: 120px;
+    }
 }
 
 .link-frame:hover .line-ani {
@@ -134,6 +189,7 @@ button {
     position: relative;
     left: -4px;
     transition: width 0.5s linear;
+
     @media (max-width:900px) {
         width: 16px;
         height: 16px;
@@ -155,8 +211,26 @@ button {
     0% {
         width: 32px;
     }
+
     100% {
         width: calc(100% + 4px);
+    }
+}
+
+.highlight-orange {
+    animation: orangeFlash 2s;
+    transition: color ;
+}
+
+@keyframes orangeFlash {
+    0% {
+        color: black 
+    }
+    50% {
+        color: #FF9900;  
+    }
+    100% {
+        color: black 
     }
 }
 
@@ -165,6 +239,22 @@ button {
     position: relative;
     bottom: 0;
     left: 0;
-    height: 10vw;
+    height: 15vw;
     background-image: linear-gradient(to bottom left, transparent 50%, black 50%);
+
+    @media (max-width: 420px) {
+        bottom: 40px;
+    }
+}
+
+.triangle-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: black;
+
+    @media (max-width: 420px) {
+        height: 40px;
+    }
 }

@@ -22,14 +22,9 @@ export class NavigationComponent {
   en: string = 'assets/icons/icon-en.png';
   de: string = 'assets/icons/icon-de.png';
   fr: string = 'assets/icons/icon-fr.png';
-  currentFlag: string = '';
+
   constructor(private languageService: LanguageService, private toggleService: ToggleService) {
-  let storedLang: any = localStorage.getItem('language');
-  if(storedLang){
-    this.currentFlag = storedLang;
-  } else {
-    this.currentFlag = 'en';
-  }
+
   }
 
   /**
@@ -39,9 +34,22 @@ export class NavigationComponent {
    */
   changeLang(lang: string): void {
     this.languageService.changeLanguage(lang);
-    this.currentFlag = lang;
     localStorage.setItem('language', lang);
+
+    // elements wich change language
+    let highlightIds = ['aboutMe', 'contact', 'privPolicy'];
+    let isRunning = false;
+    highlightIds.forEach(id => {
+      const element = document.getElementById(id);
+      if (element && !isRunning) {
+        element.classList.add('highlight-orange');
+        setTimeout(() => {
+          element.classList.remove('highlight-orange');
+        }, 2000);
+      }
+    });
   }
+
 
   togglePrivacyPolicy(): void {
     this.toggleService.togglePrivacyPolicy();
