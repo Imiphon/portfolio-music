@@ -20,6 +20,10 @@ import { MatSnackBar, MatSnackBarConfig } from "@angular/material/snack-bar";
 export class ContactComponent implements OnInit {
   contactOrange: string = '';
   contactHello: string = '';
+  bText1: string = '';
+  bText2: string = '';
+  bText3: string = '';
+  sendBtn: string = '';
   constructor(private http: HttpClient, private languageService: LanguageService, private _snackBar: MatSnackBar ) { }
 
   ngOnInit(): void {
@@ -43,6 +47,10 @@ export class ContactComponent implements OnInit {
     this.http.get<any>('assets/text-data.json').subscribe(data => {
       this.contactOrange = data[lang]['contactOrange'];
       this.contactHello = data[lang]['contactHello'];
+      this.bText1 = data[lang]['bText1'];
+      this.bText2 = data[lang]['bText2'];
+      this.bText3 = data[lang]['bText3'];
+      this.sendBtn = data[lang]['sendBtn'];
     });
   }
 

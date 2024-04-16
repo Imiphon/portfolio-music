@@ -16,7 +16,7 @@
 .subtitle {
     @include subTitle($ta: left);
     width: 100%;
-    max-width: 1440px; 
+    max-width: 1440px;
     margin-bottom: 32px;
     color: white;
 
@@ -29,6 +29,7 @@
 .quest {
     font-size: 2.2vw; //32px;
     margin-bottom: 16px;
+
     @media (max-width:600px) {
         font-size: 16px;
     }
@@ -41,6 +42,7 @@
     @media (max-width:600px) {
         font-size: 14px;
     }
+
     @media (max-width:420px) {
         margin: 0 32px 12px 32px;
     }
@@ -50,7 +52,8 @@
     @include dFlex($jc: flex-start);
     width: 100%;
     background-color: black;
-    padding-bottom: 32px;}
+    padding-bottom: 32px;
+}
 
 p {
     text-align: center;
@@ -66,14 +69,22 @@ p {
         border: 1px solid rgb(55 55 55);
         color: rgb(202, 202, 202);
         padding: 4px;
+
         &:hover {
             color: white;
             cursor: pointer;
         }
     }
-    div {
-            width: 100%;       
+
+    .sendBtn {
+        width: 120px !important;
+        height: 32px !important;
     }
+
+    div {
+        width: 100%;
+    }
+
     @media (max-width:800px) {
         width: 80%;
     }
@@ -99,12 +110,13 @@ input {
 .checkbox-frame {
     display: flex;
     width: 100%;
-    font-size: 0.7vw;   
-    line-height: 1.5vw;
     flex-direction: row !important;
+    justify-content: center;
     align-items: center;
+
     #checkbox {
         width: min-content;
+
         @media (max-width:600px) {
             width: 24px;
         }
@@ -112,16 +124,18 @@ input {
 
     p {
         width: fit-content;
-        margin:auto;
         font-size: 12px;
         line-height: 11px;
+        text-align: left;
+        padding-left: 12px;
+        margin-bottom: 0;
     }
 
     button {
         text-decoration: none;
         color: #FF9900;
         border: none;
-        font-size: 10px;
+        font-size: 12px;
         line-height: 11px;
     }
 
@@ -134,12 +148,12 @@ input {
 .black-snackbar {
     color: black !important;
     background-color: #FFFCF3 !important;
-  }
+}
 
 .error-message {
-    color:  #FF9900;
+    color: #FF9900;
     font-size: 1rem;
-  }
+}
 
 .arrow-frame {
     position: relative;
@@ -147,6 +161,7 @@ input {
     right: -40%;
     cursor: pointer;
     text-decoration: none;
+
     @media (max-width:375px) {
         right: -35%;
         bottom: 0;

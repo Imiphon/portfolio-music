@@ -38,9 +38,9 @@
                 <input type="checkbox" name="privacy" id="checkbox" [(ngModel)]="contactData.privacy" required
                     #privacyField="ngModel">
                 <p>
-                    I've read the 
-                    <button (click)="togglePrivacyPolicy()" type="button" >privacy policy</button>
-                     and agree to the processing of my data as outlined.
+                    <span [innerHTML]="bText1"></span>
+                    <button (click)="togglePrivacyPolicy()" type="button"><span [innerHTML]="bText2"></span> </button>
+                     <span [innerHTML]="bText3"></span> 
                 </p> 
                 <div *ngIf="privacyField.invalid && privacyField.touched" class="error-message">
                     You must agree to the privacy policy.
@@ -48,7 +48,7 @@
                 
             </div>
             <br>
-            <button type="submit" value="Send Message">Send Message</button>
+            <button class="sendBtn" [innerHTML]="sendBtn" type="submit" value="Send Message"></button>
         </form>
         <a class="arrow-frame" href="#home">
             <div class="arrow-up"><img src="assets/icons/arrow-white-up.png" alt=""></div>
