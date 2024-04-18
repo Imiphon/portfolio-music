@@ -12,6 +12,7 @@
 
     @media (max-width:375px) {
         height: -webkit-fill-available;
+        overflow: auto;
     }
 }
 
@@ -24,9 +25,7 @@
     height: 100%;
     max-width: 1440px;
     background-color: #FFFCF3;
-    @media (max-width: 420px) {
-        margin-top: 80px;
-    }
+    
 }
 
 .nav-cont {
@@ -127,6 +126,8 @@ button {
 }
 
 .font {
+    position: relative;
+    bottom: -10px;
     text-decoration: none;
     color: black;
     margin: 0;
@@ -134,21 +135,26 @@ button {
     position: relative;
     bottom: -16px;
     padding-left: 32px;
-
-    @media (min-width: 1140px) {
+   
+    @media (min-width: 1141px) {
         line-height: 80px;
-        font-size: 54px;
+        font-size: max(70px, 4vw);
     }
 
     @media (max-width:1140px) {
         margin-left: 4px;
-        bottom: 0;
+        bottom: -10px;
         padding-left: 8px;
     }
 
+    @media (max-width:900px) {
+        bottom: -7px;
+        font-size: max(32px, 6vw);
+    }
+
     @media (max-width:420px) {
-        line-height: 0.8;
-        font-size: 24px;
+        line-height: 1;
+        bottom: -2px;
         white-space: wrap;
     }
 
@@ -158,9 +164,13 @@ button {
     }
 }
 
+.a-frame {
+    @include dFlex();
+    width: 100%;
+}
+
 #pp {
     white-space: no-wrap !important;
-    padding-bottom: 16px;
 
     @media (max-width:420px) {
         white-space: wrap !important;
@@ -169,10 +179,14 @@ button {
 
 .link-frame {
     @include subTitle();
+    @include dFlex($ai: baseline);
     position: relative;
     width: 100%;
     @media (max-width:1440px) {
         height: 120px;
+    }
+    @media (max-width:420px) {
+        height: 80px;
     }
 }
 
@@ -192,8 +206,8 @@ button {
     transition: width 0.5s linear;
 
     @media (max-width:900px) {
-        width: 16px;
-        height: 16px;
+        width: 24px;
+        height: 24px;
     }
 
     @media (max-width:420px) {
@@ -242,10 +256,6 @@ button {
     left: 0;
     height: 15vw;
     background-image: linear-gradient(to bottom left, transparent 50%, black 50%);
-
-    @media (max-width: 420px) {
-        bottom: 40px;
-    }
 }
 
 .triangle-bottom {
@@ -253,9 +263,5 @@ button {
     bottom: 0;
     width: 100%;
     height: 0;
-    background-color: black;
-
-    @media (max-width: 420px) {
-        height: 40px;
-    }
+    background-color: black;    
 }

@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LanguageService } from "./../language.service";
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http'; // Importiere HttpClientModule
 
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'

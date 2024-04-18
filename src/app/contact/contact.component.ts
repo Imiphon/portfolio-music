@@ -24,7 +24,12 @@ export class ContactComponent implements OnInit {
   bText2: string = '';
   bText3: string = '';
   sendBtn: string = '';
-  constructor(private http: HttpClient, private languageService: LanguageService, private _snackBar: MatSnackBar ) { }
+
+  constructor(
+    private http: HttpClient, 
+    private languageService: LanguageService, 
+    private _snackBar: MatSnackBar,
+   ) { }
 
   ngOnInit(): void {
     this.languageService.getCurrentLanguage().subscribe(lang => {
@@ -32,10 +37,15 @@ export class ContactComponent implements OnInit {
     })
   }
 
+  sanitizeInput(input: string): string {
+    return input.replace(/<script.*?>.*?<\/script>/gi, '');
+  }
+
+  // higher position
   openSnackBar(message: string): void {
     const config = new MatSnackBarConfig();
     config.panelClass = ['black-snackbar']; 
-    config.duration = 3000;   
+    config.duration = 4000;   
     this._snackBar.open(message, 'Close', config );
   }
 
@@ -80,6 +90,11 @@ export class ContactComponent implements OnInit {
     });
   }
 
+  isValidEmail(email: string): boolean {
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(email);
+  }
+
   onSubmit(ngForm: NgForm) {
 
     const headers = new HttpHeaders({
@@ -88,8 +103,9 @@ export class ContactComponent implements OnInit {
     });
 
     this.allTouched(ngForm);
-    if (ngForm.valid && this.contactData.privacy&& !this.mailTest) {
-
+    let sanitizedMessage = this.sanitizeInput(this.contactData.message);
+    this.contactData.message = sanitizedMessage;  // Update the message in contactData with sanitized version
+    if (ngForm.valid && this.contactData.privacy && !this.mailTest) {
       //conversion to JSON works automaticly with HTTPClient, so I take directly contactData
       this.http.post(this.post.endPoint, this.contactData, { headers, responseType: 'text' })
         .subscribe({
@@ -99,6 +115,7 @@ export class ContactComponent implements OnInit {
           },
           error: (error) => {
             console.error(error);
+            this.openSnackBar('Failed to send message.');
           },
           complete: () => console.info('send post complete'),
         });

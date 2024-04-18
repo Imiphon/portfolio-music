@@ -11,7 +11,7 @@
 
         <form #contactForm="ngForm" class="contact-form" (ngSubmit)="onSubmit(contactForm)">
             <div>
-                <input placeholder="Your name" name="name" [(ngModel)]="contactData.name" required #nameField="ngModel">
+                <input placeholder="Your name" name="name" [(ngModel)]="contactData.name" required #nameField="ngModel" autocomplete="name">
                 <div *ngIf="nameField.invalid && nameField.touched" class="error-message">
                     Name is required.
                 </div>
@@ -19,7 +19,7 @@
             <br>
             <div>
                 <input type="email" name="email" id="email" placeholder="Your eMail" ngModel #emailField="ngModel"
-                    [(ngModel)]="contactData.email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+                    [(ngModel)]="contactData.email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required autocomplete="email">
                 <div *ngIf="emailField.invalid && emailField.touched" class="error-message">
                     Please enter a valid email.
                 </div>

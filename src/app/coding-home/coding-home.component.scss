@@ -21,9 +21,19 @@
     }
 }
 
-.in-head-frame {
+.headline-outside {
+    @include dFlex();
+    width: 100vw;
+    height: fit-content;
+    background-color: #FFFCF3;
+    z-index: 4;
     position: relative;
     top: 120px;
+}
+
+.in-head-frame {
+    position: relative;
+    //top: 120px;
     @include dFlex();
     width: fit-content;
     background-color: #FFFCF3;
@@ -94,6 +104,9 @@
 
     div {
         max-height: min-content;
+    }
+    @media (max-width:1440px) {
+        width: 88vw;
     }
 
     @media (max-width:800px) {
