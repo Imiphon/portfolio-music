@@ -2,18 +2,8 @@
 
 .contact-frame {
     width: 100vw;
-    //max-width: 1440px;
-    height: auto; //1002px;
+    height: auto;
 }
-
-/*
-.triangle {
-    width: 100vw;
-    max-width: 1440px;
-    height: 16vw; //230px;    
-    background-image: linear-gradient(to bottom left, transparent 50%, black 50%);
-}
-*/
 
 .subtitle {
     @include subTitle($ta: left);
@@ -188,5 +178,11 @@ input {
 
     100% {
         transform: translateX(0);
+    }
+}
+
+.legal-note{
+    p{
+        margin-right: 5vw !important;
     }
 }
