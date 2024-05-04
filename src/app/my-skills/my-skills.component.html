@@ -9,6 +9,7 @@
                 *ngFor="let image of images; 
                 let index = index" 
                 (click)="openPopup(image.name, $event)" 
+                (mouseenter)="openPopup(image.name, $event)"
                 [src]="image.src" alt=""
             >             
             

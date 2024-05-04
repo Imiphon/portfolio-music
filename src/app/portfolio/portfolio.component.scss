@@ -81,6 +81,14 @@
 
 .colored {
     display: none;
+    @media (max-width:1040px) {
+        display: inline;
+    }
+}
+.uncolored {
+    @media (max-width:1040px) {
+        display: none;
+    };
 }
 
 .ios {

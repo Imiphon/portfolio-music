@@ -27,6 +27,9 @@ export class MySkillsComponent implements OnInit {
   growingIndex: number | null = null;
 
   isSoundLoaded: boolean = false;
+  //describes an array with strings as keys and booleans as value
+  isOpen: { [key: string]: boolean } = {};
+
 
   popups: Array<{
     content: string;
@@ -35,11 +38,15 @@ export class MySkillsComponent implements OnInit {
   }> = [];
 
   constructor() {
+    this.isOpen = {};
   }
 
   ngOnInit(): void {
-    this.growingIntervall();     
+    this.growingIntervall();
     this.loadSound();
+    this.images.forEach(image => {
+      this.isOpen[image.name] = false;
+    });
   }
 
   growingIntervall() {
@@ -67,23 +74,28 @@ export class MySkillsComponent implements OnInit {
     const clickX = event.clientX;
     const clickY = event.clientY;
 
-    if(this.isSoundLoaded){
-      let currDrop = new Audio('assets/sounds/plopp.mp3');
-      currDrop.play();
-      currDrop.volume = 0.2;
-      currDrop.onended = () => {
-        currDrop.remove();
+    if (!this.isOpen[name]) {
+      if (this.isSoundLoaded) {
+        let currDrop = new Audio('assets/sounds/plopp.mp3');
+        currDrop.play();
+        currDrop.volume = 0.2;
+        currDrop.onended = () => {
+          currDrop.remove();
+        }
       }
+
+      this.popups.push({
+        content: name,
+        positionX: clickX + 'px',
+        positionY: clickY + 'px',
+      });
+
+      this.isOpen[name] = true;
+
+      setTimeout(() => {
+        this.popups.shift();
+        this.isOpen[name] = false;
+      }, 3000);
     }
-
-    this.popups.push({
-      content: name,
-      positionX: clickX + 'px',
-      positionY: clickY + 'px',
-    });
-
-    setTimeout(() => {
-      this.popups.shift();
-    }, 3000);
   }
 }
