@@ -17,6 +17,7 @@ export class PortfolioComponent implements OnInit {
   portfolioJoin: string = '';
   portfolioPollo: string = '';
   portfolioPokemon: string = '';
+  portfolioCardgame: string = '';
   showColored: boolean = false;
   isIOS:boolean = false; 
   constructor(private languageService: LanguageService, private http: HttpClient, private iosChecker: IosCheckerService) {
@@ -37,7 +38,8 @@ export class PortfolioComponent implements OnInit {
     this.http.get<any>('assets/text-data.json').subscribe(data => {
       this.portfolioJoin = data[lang]['portfolioJoin'];
       this.portfolioPollo = data[lang]['portfolioPollo'];
-      this.portfolioPokemon = data[lang]['portfolioPokemon'];
+      this.portfolioPokemon = data[lang]['portfolioPokemon'];      
+      this.portfolioCardgame = data[lang]['portfolioCardgame'];
     });
   }
 }

@@ -1,6 +1,6 @@
 {
   "en": {
-    "aboutMe": "<p>Welcome to my website (created with Angular). As a Junior Frontend Developer, music producer, and passionate game developer, I have already gathered extensive experience in implementing IT projects in my life. This ranges from working with advertising agencies through various multimedia projects to developing educational games and much more. I am excited to offer my digital skills here and am available for projects in both Germany and Canada.</p>",
+    "aboutMe": "<p>Welcome to my website (created with Angular). As a Junior Frontend Developer, music producer, and passionate game developer, I have already gathered extensive experience in implementing IT projects in my life. This ranges from working with advertising agencies through various multimedia projects to developing educational games and much more. I am excited to offer my digital skills here and I am available for projects in both Germany and Canada.</p>",
     "contactOrange": "Want to discuss a new project?",
     "contactHello": "Say hello! Let's discuss your ideas and make it happen.",
     "bText1": "I've read the",
@@ -11,7 +11,8 @@
     "legalNotice": "<h1>Legal Notice</h1><p>Date: [12th March 2023]</p><h2>Overview:</h2><p>This website was created by Lars Mensching.</p><h2>Contact:</h2><p>Lars Mensching<br>Karl-Kunger Str. 48<br>12435 Berlin<br>Germany<br></p>",
     "portfolioJoin": "A task management application inspired by the Kanban System. Create and organize tasks using drag-and-drop functions, assign contacts, categorize tasks and create new contacts.",
     "portfolioPollo": "A jump-and-run game based on an object-oriented approach. You have to find Tabasco bottles to hit chickens. For iOS, I reduced the sound for better performance.",
-    "portfolioPokemon": "This app imports Pokémon data from an API and presents it individually."
+    "portfolioPokemon": "This app imports Pokémon data from an API and presents it individually.",
+    "portfolioCardgame": "A small card game using Angular and Firebase, demonstrating synchronous data transmission between various end-users."
   },
   "de": {
     "aboutMe": "<p>Willkommen auf meiner (mit Angular erstellten) Website. Als Junior Frontend-Developer, Musikproduzent und passionierter Spieleentwickler, habe ich in meinem Leben bereits umfangreiche Erfahrungen bei der Umsetzung von IT-Projekten gesammelt. Diese reicht von der Arbeit mit Werbeagenturen über diverse Multimediaprojekte, bis hin zur Entwicklung von Lernspielen und vielem mehr. Ich freue mich, hier meine digitalen Fähigkeiten anbieten zu können und bin für Projekte sowohl in Deutschland als auch in Kanada verfügbar.</p>",
@@ -24,7 +25,8 @@
     "legalNotice": "<h1>Legal Notice</h1><p>Datum: [12. März 2023]</p><h2>Übersicht:</h2><p>Diese Website wurde von Lars Mensching erstellt.</p><h2>Kontakt:</h2><p>Lars Mensching<br>Karl-Kunger Str. 48<br>12435 Berlin<br>Deutschland<br></p>",
     "portfolioJoin": "Eine Anwendung, die vom Kanban-System inspiriert wurde, zum Erstellen und Organisieren von Aufgaben, mithilfe von Drag-and-Drop-Funktionen. Man kann Aufgaben einzelnen Benutzern zuweisen und sie kategorisieren, sowie neue Kontakte erstellen.",
     "portfolioPollo": "Ein Jump-and-Run-Spiel basierend auf einem objektorientierten Ansatz. Man muss Tabasco-Flaschen finden, um damit Hühner abzuwerfen. Für iOS habe ich den Ton reduziert, um eine bessere Leistung zu erzielen.",
-    "portfolioPokemon": "Diese App importiert Pokémon-Daten von einer API und stellt sie individuell dar."
+    "portfolioPokemon": "Diese App importiert Pokémon-Daten von einer API und stellt sie individuell dar.",
+    "portfolioCardgame": "Ein kleines Kartenspiel mit Angular und Firebase, zur Demonstration synchroner Datenübertragung zwischen verschiedenen Endnutzern."
   },
   "fr": {
     "aboutMe": "<p>Bienvenue sur mon site web (créé avec Angular). En tant que développeur frontend junior, producteur de musique et développeur de jeux passionné, j'ai déjà acquis une expérience considérable dans la mise en œuvre de projets informatiques dans ma vie. Cela va du travail avec des agences de publicité à divers projets multimédias, jusqu'au développement de jeux éducatifs et bien plus encore. Je suis ravi de pouvoir offrir mes compétences numériques ici et je suis disponible pour des projets en Allemagne comme au Canada.</p>",
@@ -38,6 +40,7 @@
     "legalNotice": "<h1>Mention Légale</h1><p>Date : [12 mars 2023]</p><h2>Aperçu :</h2><p>Ce site Web a été créé par Lars Mensching.</p><h2>Contact :</h2><p>Lars Mensching<br>Karl-Kunger Str. 48<br>12435 Berlin<br>Allemagne<br></p>",
     "portfolioJoin": "Une application de gestion des tâches inspirée par le système Kanban. Créez et organisez des tâches à l'aide de fonctions de glisser-déposer, attribuez des utilisateurs et catégorisez les tâches.",
     "portfolioPollo": " Un jeu de type jump-and-run basé sur une approche orientée objet. Il faut trouver des bouteilles de Tabasco pour les lancer sur les poules. Pour iOS, j'ai réduit le son pour améliorer les performances.",
-    "portfolioPokemon": "Cette application importe des données Pokémon à partir d'une API et les présente de manière individuelle."
+    "portfolioPokemon": "Cette application importe des données Pokémon à partir d'une API et les présente de manière individuelle.",
+    "portfolioCardgame": "Un petit jeu de cartes utilisant Angular et Firebase, pour démontrer la transmission de données synchrones entre différents utilisateurs finaux."
   }
 }
