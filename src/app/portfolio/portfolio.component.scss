@@ -185,8 +185,8 @@
 }
 
 .desc-r {
-    margin: 12px 0 0 32px;
-    text-align: right;
+    margin: 12px 0 0 6em;
+    text-align: left;
     @media (min-width:1140px) {
         opacity: 0;
     }
@@ -196,8 +196,8 @@
     }
 }
 
-.desc-l {
-    margin-top: 12px;
+.desc-l {    
+    margin: 12px 6em 0 0;
     @media (min-width:1140px) {
         opacity: 0;
     }

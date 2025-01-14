@@ -4,7 +4,8 @@ html {
     overflow: auto;
     scrollbar-width: none;
     /* Für Firefox */
-    background-color: #FFFCF3;
+   color: #FFFCF3;
+    background-color: #000000;
     scroll-behavior: smooth;
 }
 
@@ -14,7 +15,8 @@ html::-webkit-scrollbar {
 }
 
 body {
-    background-color: #FFFCF3;
+    color: #FFFCF3;
+    background-color: #000000;
     margin: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;

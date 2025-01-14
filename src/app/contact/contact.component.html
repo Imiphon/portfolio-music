@@ -39,7 +39,7 @@
                     #privacyField="ngModel">
                 <p>
                     <span [innerHTML]="bText1"></span>
-                    <button (click)="togglePrivacyPolicy()" type="button"><span [innerHTML]="bText2"></span> </button>
+                    <button class="priv-btn" (click)="togglePrivacyPolicy()" type="button"><span [innerHTML]="bText2"></span> </button>
                      <span [innerHTML]="bText3"></span> 
                 </p> 
                 <div *ngIf="privacyField.invalid && privacyField.touched" class="error-message">
